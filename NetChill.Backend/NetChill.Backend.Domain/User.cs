@@ -4,7 +4,7 @@ using NetChill.Backend.Domain.Enums;
 
 namespace NetChill.Backend.Domain
 {
-    class User
+   public class User
     {
         [Key]
         [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
