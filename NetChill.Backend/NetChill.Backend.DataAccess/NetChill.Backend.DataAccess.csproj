@@ -57,7 +57,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMovieDataAccess.cs" />
+    <Compile Include="Services\IUserDataAccess.cs" />
+    <Compile Include="Services\MovieDataAccess.cs" />
     <Compile Include="Services\NetChillDbContext.cs" />
+    <Compile Include="Services\UserDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

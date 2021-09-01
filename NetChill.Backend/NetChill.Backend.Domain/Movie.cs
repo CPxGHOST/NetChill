@@ -16,7 +16,7 @@ namespace NetChill.Backend.Domain
         public string Category { get; set; }
 
         [Required(ErrorMessage = "Year must be in YYYY format.")]
-        public DateTime YearOfRelease { get; set; }
+        public int YearOfRelease { get; set; }
 
         [Required(ErrorMessage = "This field is required.")]
         public DateTime AvailabilityStarts { get; set; }
