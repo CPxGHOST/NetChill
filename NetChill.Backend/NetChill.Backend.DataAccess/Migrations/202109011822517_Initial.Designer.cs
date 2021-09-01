@@ -13,7 +13,7 @@ namespace NetChill.Backend.DataAccess.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202109011141546_Initial"; }
+            get { return "202109011822517_Initial"; }
         }
         
         string IMigrationMetadata.Source

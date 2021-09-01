@@ -14,7 +14,7 @@
                         MovieId = c.Guid(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 255),
                         Category = c.String(nullable: false, maxLength: 255),
-                        YearOfRelease = c.DateTime(nullable: false),
+                        YearOfRelease = c.Int(nullable: false),
                         AvailabilityStarts = c.DateTime(nullable: false),
                         Description = c.String(nullable: false),
                         IsFeatured = c.Boolean(nullable: false),
