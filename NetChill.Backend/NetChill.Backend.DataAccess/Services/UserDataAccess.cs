@@ -9,19 +9,21 @@ namespace NetChill.Backend.DataAccess.Services
 {
     public class UserDataAccess : IUserDataAccess
     {
-        private readonly NetChillDbContext userData;
+        private readonly NetChillDbContext netChillDbContext;
 
         public UserDataAccess()
         {
-            this.userData = new NetChillDbContext();
+            this.netChillDbContext = new NetChillDbContext();
         }
 
+
+        /// <inheritdoc cref="IUserDataAccess.DoesUserExist(User)"/>
         public bool AddUser(User user)
         {
             try
             {
-                this.userData.Users.Add(user);
-                this.userData.SaveChanges();
+                this.netChillDbContext.Users.Add(user);
+                this.netChillDbContext.SaveChanges();
                 return true;
 
             }
@@ -31,11 +33,12 @@ namespace NetChill.Backend.DataAccess.Services
             }
         }
 
+        /// <inheritdoc cref="IUserDataAccess.DoesUserExist(User)" />
         public bool DoesUserExist(User user)
         {
             try
             {
-                var userToBeFound = this.userData.Users.Find(user);
+                var userToBeFound = this.netChillDbContext.Users.Find(user);
                 return userToBeFound != null;
             }
             catch (Exception exception) {
