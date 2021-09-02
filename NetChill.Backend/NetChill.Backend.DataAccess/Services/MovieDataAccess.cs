@@ -2,34 +2,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NetChill.Server.DataAccess.Services
 {
     public class MovieDataAccess : IMovieDataAccess
     {
 
-        private readonly NetChillDbContext netChillContext;
+        private readonly NetChillDbContext _context;
 
-
-        
         public MovieDataAccess()
         {
-            this.netChillContext = new NetChillDbContext();
+            this._context = new NetChillDbContext();
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetAllMovies"/>
         public IEnumerable<Movie> GetAllMovies()
         {
             try {
-                return this.netChillContext.Movies.OrderBy(movie => movie.AvailabilityStarts);
+                return this._context.Movies.OrderBy(movie => movie.AvailabilityStarts);
             }
             catch (Exception exception) {
                 Console.WriteLine(exception.Message);
                 return null;
             }
-          
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetFeaturedMovies"/>
@@ -37,13 +32,12 @@ namespace NetChill.Server.DataAccess.Services
         {
             try
             {
-                return (IEnumerable<Movie>)this.netChillContext.Movies.Select(movie => movie.IsFeatured == true);
+                return (IEnumerable<Movie>)this._context.Movies.Select(movie => movie.IsFeatured == true);
             }
             catch (Exception exception) {
                 Console.WriteLine(exception.Message);
                 return null;
             }
-            
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetNewReleases"/>
@@ -51,12 +45,11 @@ namespace NetChill.Server.DataAccess.Services
         {
             try
             {
-                var query = from movie in this.netChillContext.Movies
-                            where movie.AvailabilityStarts <= DateTime.Now
-                            orderby movie.AvailabilityStarts descending
-                            select movie;
-
-                return query;
+                 var query = from movie in this._context.Movies
+                        where movie.AvailabilityStarts <= DateTime.Now
+                        orderby movie.AvailabilityStarts descending
+                        select movie;
+                 return query;
             
             }
             catch (Exception exception)
@@ -64,7 +57,6 @@ namespace NetChill.Server.DataAccess.Services
                 Console.WriteLine(exception.Message);
                 return null;
             }
-           
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetUpcomingMovies"/>
@@ -72,10 +64,9 @@ namespace NetChill.Server.DataAccess.Services
         {
             try
             {
-                var query = from movie in this.netChillContext.Movies
-                            where movie.AvailabilityStarts > DateTime.Now
-                            select movie;
-
+                var query = from movie in this._context.Movies
+                        where movie.AvailabilityStarts > DateTime.Now
+                        select movie;
                 return query;
             }
             catch (Exception exception)
@@ -84,7 +75,6 @@ namespace NetChill.Server.DataAccess.Services
                 return null;
             }
 
-           
         }
     }
 }

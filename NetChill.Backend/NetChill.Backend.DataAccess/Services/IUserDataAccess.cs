@@ -22,5 +22,7 @@ namespace NetChill.Server.DataAccess.Services
         /// <param name="user">The user to be added</param>
         /// <returns>True if we are successfully able to add the user else false</returns>
         bool AddUser(User user);
+        User GetUserById(Guid id);
+        void UpdateUser(User user);
     }
 }

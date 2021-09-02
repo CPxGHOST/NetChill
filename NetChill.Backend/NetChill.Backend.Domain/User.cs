@@ -11,7 +11,7 @@ namespace NetChill.Server.Domain
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "FullName is Required!")]
-        public string FName { get; set; }
+        public string FullName { get; set; }
 
         [Required(ErrorMessage = "Email is Required!")]
         public string Email { get; set; }

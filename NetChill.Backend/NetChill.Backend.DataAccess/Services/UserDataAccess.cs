@@ -1,6 +1,7 @@
-﻿using NetChill.Server.Domain;
+using NetChill.Server.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,12 @@ namespace NetChill.Server.DataAccess.Services
 {
     public class UserDataAccess : IUserDataAccess
     {
-        private readonly NetChillDbContext netChillDbContext;
+
+        private readonly NetChillDbContext _context;
 
         public UserDataAccess()
         {
-            this.netChillDbContext = new NetChillDbContext();
+            this._context = new NetChillDbContext();
         }
 
 
@@ -22,8 +24,9 @@ namespace NetChill.Server.DataAccess.Services
         {
             try
             {
-                this.netChillDbContext.Users.Add(user);
-                this.netChillDbContext.SaveChanges();
+                this._context.Users.Add(user);
+                this._context.SaveChanges();
+
                 return true;
 
             }
@@ -38,13 +41,25 @@ namespace NetChill.Server.DataAccess.Services
         {
             try
             {
-                var userToBeFound = this.netChillDbContext.Users.Find(user);
+                var userToBeFound = this._context.Users.Find(user);
                 return userToBeFound != null;
             }
             catch (Exception exception) {
                 Console.WriteLine(exception);
                 return false;
             }
+        }
+
+        public User GetUserById(Guid id)
+        {
+            return _context.Users.FirstOrDefault(u => u.Id.Equals(id));
+        }
+
+        public void UpdateUser(User user)
+        {
+            var entry = _context.Entry(user);
+            entry.State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }
