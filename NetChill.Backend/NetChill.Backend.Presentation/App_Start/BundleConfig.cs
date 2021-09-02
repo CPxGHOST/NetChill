@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace NetChill.Server.Presentation
+namespace NetChill.Backend.Presentation
 {
     public class BundleConfig
     {

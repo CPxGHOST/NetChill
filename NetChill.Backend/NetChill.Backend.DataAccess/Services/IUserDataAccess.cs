@@ -1,11 +1,11 @@
-﻿using NetChill.Server.Domain;
+﻿using NetChill.Backend.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public interface IUserDataAccess
     {
@@ -22,7 +22,18 @@ namespace NetChill.Server.DataAccess.Services
         /// <param name="user">The user to be added</param>
         /// <returns>True if we are successfully able to add the user else false</returns>
         bool AddUser(User user);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         User GetUserById(Guid id);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
         void UpdateUser(User user);
     }
 }

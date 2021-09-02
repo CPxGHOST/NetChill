@@ -1,9 +1,9 @@
-using NetChill.Server.Domain;
+using NetChill.Backend.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public class NetChillDbContext: DbContext
     {

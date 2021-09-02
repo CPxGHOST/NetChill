@@ -1,18 +1,14 @@
-﻿using NetChill.Server.Domain;
+﻿using NetChill.Backend.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public class MovieListDataAccess : IMovieListDataAccess
     {
-        private readonly NetChillDbContext _netChillDbContext;
+        private readonly NetChillDbContext _context;
         public MovieListDataAccess()
         {
-            this._netChillDbContext = new NetChillDbContext();
+            this._context = new NetChillDbContext();
         }
         
         /// <inheritdoc cref="IMovieListDataAccess.AddMovieToMovieList(Movie, User)"/>
@@ -20,7 +16,7 @@ namespace NetChill.Server.DataAccess.Services
         {
             try
             {
-                this._netChillDbContext.MovieLists.Add(new MovieList
+                this._context.MovieLists.Add(new MovieList
                 {
                     Movie = movie,
                     User = user,
@@ -28,10 +24,11 @@ namespace NetChill.Server.DataAccess.Services
                     UserId = user.Id
 
                 });
-                this._netChillDbContext.SaveChanges();
+                this._context.SaveChanges();
                 return true;
             }
-            catch (Exception exception) {
+            catch (Exception exception) 
+            {
                 Console.WriteLine(exception);
                 return false;
             }

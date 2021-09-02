@@ -1,9 +1,9 @@
-﻿using NetChill.Server.Domain;
+﻿using NetChill.Backend.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public class MovieDataAccess : IMovieDataAccess
     {
@@ -21,7 +21,8 @@ namespace NetChill.Server.DataAccess.Services
             try {
                 return this._context.Movies.OrderBy(movie => movie.AvailabilityStarts);
             }
-            catch (Exception exception) {
+            catch (Exception exception) 
+            {
                 Console.WriteLine(exception.Message);
                 return null;
             }
@@ -34,7 +35,8 @@ namespace NetChill.Server.DataAccess.Services
             {
                 return (IEnumerable<Movie>)this._context.Movies.Select(movie => movie.IsFeatured == true);
             }
-            catch (Exception exception) {
+            catch (Exception exception) 
+            {
                 Console.WriteLine(exception.Message);
                 return null;
             }
@@ -74,7 +76,6 @@ namespace NetChill.Server.DataAccess.Services
                 Console.WriteLine(exception.Message);
                 return null;
             }
-
         }
     }
 }

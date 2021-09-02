@@ -1,8 +1,8 @@
-using NetChill.Server.Domain;
+using NetChill.Backend.Domain;
 using System;
 using System.Collections.Generic;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public interface IMovieDataAccess
     {

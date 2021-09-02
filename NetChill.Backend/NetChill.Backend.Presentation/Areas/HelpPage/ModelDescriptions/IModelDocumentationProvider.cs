@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions
+namespace NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

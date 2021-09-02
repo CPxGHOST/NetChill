@@ -1,18 +1,18 @@
-﻿namespace NetChill.Server.DataAccess.Migrations
+﻿namespace NetChill.Backend.DataAccess.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NetChill.Server.DataAccess.Services.NetChillDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<NetChill.Backend.DataAccess.Services.NetChillDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(NetChill.Server.DataAccess.Services.NetChillDbContext context)
+        protected override void Seed(NetChill.Backend.DataAccess.Services.NetChillDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
