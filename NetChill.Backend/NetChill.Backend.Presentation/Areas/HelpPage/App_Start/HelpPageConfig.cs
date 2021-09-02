@@ -16,7 +16,7 @@ using System.Web.Http;
 using System.Web.Http.OData;
 #endif
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage
+namespace NetChill.Server.Presentation.Areas.HelpPage
 {
     /// <summary>
     /// Use this class to customize the Help Page.

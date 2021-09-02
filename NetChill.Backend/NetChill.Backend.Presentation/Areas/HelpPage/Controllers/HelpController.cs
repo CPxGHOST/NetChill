@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions;
-using NetChill.Backend.Presentation.Areas.HelpPage.Models;
+using NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions;
+using NetChill.Server.Presentation.Areas.HelpPage.Models;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage.Controllers
+namespace NetChill.Server.Presentation.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

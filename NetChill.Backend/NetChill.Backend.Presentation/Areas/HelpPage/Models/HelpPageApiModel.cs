@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions;
+using NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage.Models
+namespace NetChill.Server.Presentation.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

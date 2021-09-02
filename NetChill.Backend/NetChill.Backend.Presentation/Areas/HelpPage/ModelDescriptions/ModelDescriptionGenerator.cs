@@ -11,7 +11,7 @@ using System.Web.Http.Description;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions
+namespace NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Generates model descriptions for given types.

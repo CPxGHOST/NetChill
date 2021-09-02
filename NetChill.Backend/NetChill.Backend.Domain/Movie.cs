@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace NetChill.Backend.Domain
+namespace NetChill.Server.Domain
 {
     public class Movie
     {

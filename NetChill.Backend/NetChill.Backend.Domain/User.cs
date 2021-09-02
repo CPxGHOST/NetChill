@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using NetChill.Backend.Domain.Enums;
+using NetChill.Server.Domain.Enums;
 
-namespace NetChill.Backend.Domain
+namespace NetChill.Server.Domain
 {
    public class User
     {

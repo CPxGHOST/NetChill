@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetChill.Backend.Presentation", "NetChill.Backend.Presentation.csproj", "{F9107EF9-844F-4480-843B-AD21A3D6C1DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetChill.Server.Api", "NetChill.Server.Api.csproj", "{F9107EF9-844F-4480-843B-AD21A3D6C1DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetChill.Backend.Domain", "..\NetChill.Backend.Domain\NetChill.Backend.Domain.csproj", "{CE052512-92FB-4965-9FDA-F34FFC291471}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetChill.Server.Domain", "..\NetChill.Backend.Domain\NetChill.Server.Domain.csproj", "{CE052512-92FB-4965-9FDA-F34FFC291471}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetChill.Backend.DataAccess", "..\NetChill.Backend.DataAccess\NetChill.Backend.DataAccess.csproj", "{CF7DD117-98C4-445C-AA37-22F30AE138AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetChill.Server.DataAccess", "..\NetChill.Backend.DataAccess\NetChill.Server.DataAccess.csproj", "{CF7DD117-98C4-445C-AA37-22F30AE138AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

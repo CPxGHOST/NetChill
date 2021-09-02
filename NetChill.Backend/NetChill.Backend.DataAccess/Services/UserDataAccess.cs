@@ -1,4 +1,4 @@
-﻿using NetChill.Backend.Domain;
+using NetChill.Server.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetChill.Backend.DataAccess.Services
+namespace NetChill.Server.DataAccess.Services
 {
     public class UserDataAccess : IUserDataAccess
     {
+
         private readonly NetChillDbContext _context;
 
         public UserDataAccess()
@@ -17,12 +18,15 @@ namespace NetChill.Backend.DataAccess.Services
             this._context = new NetChillDbContext();
         }
 
+
+        /// <inheritdoc cref="IUserDataAccess.DoesUserExist(User)"/>
         public bool AddUser(User user)
         {
             try
             {
                 this._context.Users.Add(user);
                 this._context.SaveChanges();
+
                 return true;
 
             }
@@ -32,6 +36,7 @@ namespace NetChill.Backend.DataAccess.Services
             }
         }
 
+        /// <inheritdoc cref="IUserDataAccess.DoesUserExist(User)" />
         public bool DoesUserExist(User user)
         {
             try
