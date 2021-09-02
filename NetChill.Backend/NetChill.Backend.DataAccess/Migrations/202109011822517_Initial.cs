@@ -1,4 +1,4 @@
-﻿namespace NetChill.Backend.DataAccess.Migrations
+﻿namespace NetChill.Server.DataAccess.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

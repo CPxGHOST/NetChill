@@ -1,6 +1,6 @@
 using System;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions
+namespace NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

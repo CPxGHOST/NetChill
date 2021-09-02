@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NetChill.Backend.Domain.Enums
+namespace NetChill.Server.Domain.Enums
 {
     public enum UserType
     {

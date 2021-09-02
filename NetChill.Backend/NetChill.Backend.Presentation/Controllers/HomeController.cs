@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NetChill.Backend.Presentation.Controllers
+namespace NetChill.Server.Presentation.Controllers
 {
     public class HomeController : Controller
     {
