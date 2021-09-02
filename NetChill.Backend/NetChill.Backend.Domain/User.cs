@@ -8,10 +8,10 @@ namespace NetChill.Backend.Domain
     {
         [Key]
         [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
-        public Guid UserId { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "FullName is Required!")]
-        public string FName { get; set; }
+        public string FullName { get; set; }
 
         [Required(ErrorMessage = "Email is Required!")]
         public string Email { get; set; }

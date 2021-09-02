@@ -11,5 +11,7 @@ namespace NetChill.Backend.DataAccess.Services
     {
         bool DoesUserExist(User user);
         bool AddUser(User user);
+        User GetUserById(Guid id);
+        void UpdateUser(User user);
     }
 }

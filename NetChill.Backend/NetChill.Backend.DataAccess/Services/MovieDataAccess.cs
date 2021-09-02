@@ -2,33 +2,31 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NetChill.Backend.DataAccess.Services
 {
     public class MovieDataAccess : IMovieDataAccess
     {
 
-        private readonly NetChillDbContext movieData;
+        private readonly NetChillDbContext _context;
 
         public MovieDataAccess()
         {
-            this.movieData = new NetChillDbContext();
+            this._context = new NetChillDbContext();
         }
         public IEnumerable<Movie> GetAllMovies()
         {
-            return this.movieData.Movies.OrderBy(movie => movie.AvailabilityStarts);
+            return this._context.Movies.OrderBy(movie => movie.AvailabilityStarts);
         }
 
         public IEnumerable<Movie> GetFeaturedMovies()
         {
-            return (IEnumerable<Movie>)this.movieData.Movies.Select(movie => movie.IsFeatured == true);
+            return (IEnumerable<Movie>)this._context.Movies.Select(movie => movie.IsFeatured == true);
         }
 
         public IEnumerable<Movie> GetNewReleases()
         {
-            var query = from movie in this.movieData.Movies
+            var query = from movie in this._context.Movies
                         where movie.AvailabilityStarts <= DateTime.Now
                         orderby movie.AvailabilityStarts descending
                         select movie;
@@ -38,7 +36,7 @@ namespace NetChill.Backend.DataAccess.Services
         public IEnumerable<Movie> GetUpcomingMovies()
         {
 
-            var query = from movie in this.movieData.Movies
+            var query = from movie in this._context.Movies
                         where movie.AvailabilityStarts > DateTime.Now
                         select movie;
 
