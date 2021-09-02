@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace NetChill.Backend.Presentation
+namespace NetChill.Server.Presentation
 {
     public class FilterConfig
     {

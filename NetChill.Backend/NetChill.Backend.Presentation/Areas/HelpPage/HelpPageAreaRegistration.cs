@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage
+namespace NetChill.Server.Presentation.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

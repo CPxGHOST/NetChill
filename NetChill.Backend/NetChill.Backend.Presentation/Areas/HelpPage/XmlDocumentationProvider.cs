@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions;
+using NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage
+namespace NetChill.Server.Presentation.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions;
-using NetChill.Backend.Presentation.Areas.HelpPage.Models;
+using NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions;
+using NetChill.Server.Presentation.Areas.HelpPage.Models;
 
-namespace NetChill.Backend.Presentation.Areas.HelpPage
+namespace NetChill.Server.Presentation.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

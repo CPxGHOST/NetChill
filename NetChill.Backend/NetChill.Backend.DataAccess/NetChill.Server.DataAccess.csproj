@@ -78,9 +78,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetChill.Backend.Domain\NetChill.Backend.Domain.csproj">
+    <ProjectReference Include="..\NetChill.Backend.Domain\NetChill.Server.Domain.csproj">
       <Project>{CE052512-92FB-4965-9FDA-F34FFC291471}</Project>
-      <Name>NetChill.Backend.Domain</Name>
+      <Name>NetChill.Server.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
