@@ -55,9 +55,18 @@
     <Compile Include="Migrations\202109011822517_Initial.designer.cs">
       <DependentUpon>202109011822517_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109020755489_MigrationV1.cs" />
+    <Compile Include="Migrations\202109020755489_MigrationV1.designer.cs">
+      <DependentUpon>202109020755489_MigrationV1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109020801438_MigrationV4.cs" />
+    <Compile Include="Migrations\202109020801438_MigrationV4.designer.cs">
+      <DependentUpon>202109020801438_MigrationV4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IMovieDataAccess.cs" />
+    <Compile Include="Services\IMovieListDataAccess.cs" />
     <Compile Include="Services\IUserDataAccess.cs" />
     <Compile Include="Services\MovieDataAccess.cs" />
     <Compile Include="Services\NetChillDbContext.cs" />
@@ -76,6 +85,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202109011822517_Initial.resx">
       <DependentUpon>202109011822517_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109020755489_MigrationV1.resx">
+      <DependentUpon>202109020755489_MigrationV1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109020801438_MigrationV4.resx">
+      <DependentUpon>202109020801438_MigrationV4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

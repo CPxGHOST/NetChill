@@ -7,7 +7,7 @@ namespace NetChill.Backend.Domain
     {
         [Key]
         [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
-        public Guid MovieId { get; set; }
+        public Guid Id { get; set; }
 
         [Required, MaxLength(255, ErrorMessage = "Not more than 255 characters.")]
         public string Name { get; set; }

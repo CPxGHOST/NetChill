@@ -22,35 +22,69 @@ namespace NetChill.Backend.DataAccess.Services
         /// <inheritdoc cref="IMovieDataAccess.GetAllMovies"/>
         public IEnumerable<Movie> GetAllMovies()
         {
-            return this.netChillContext.Movies.OrderBy(movie => movie.AvailabilityStarts);
+            try {
+                return this.netChillContext.Movies.OrderBy(movie => movie.AvailabilityStarts);
+            }
+            catch (Exception exception) {
+                Console.WriteLine(exception.Message);
+                return null;
+            }
+          
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetFeaturedMovies"/>
         public IEnumerable<Movie> GetFeaturedMovies()
         {
-            return (IEnumerable<Movie>)this.netChillContext.Movies.Select(movie => movie.IsFeatured == true);
+            try
+            {
+                return (IEnumerable<Movie>)this.netChillContext.Movies.Select(movie => movie.IsFeatured == true);
+            }
+            catch (Exception exception) {
+                Console.WriteLine(exception.Message);
+                return null;
+            }
+            
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetNewReleases"/>
         public IEnumerable<Movie> GetNewReleases()
         {
-            var query = from movie in this.netChillContext.Movies
-                        where movie.AvailabilityStarts <= DateTime.Now
-                        orderby movie.AvailabilityStarts descending
-                        select movie;
+            try
+            {
+                var query = from movie in this.netChillContext.Movies
+                            where movie.AvailabilityStarts <= DateTime.Now
+                            orderby movie.AvailabilityStarts descending
+                            select movie;
+
+                return query;
             
-            return query;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                return null;
+            }
+           
         }
 
         /// <inheritdoc cref="IMovieDataAccess.GetUpcomingMovies"/>
         public IEnumerable<Movie> GetUpcomingMovies()
         {
+            try
+            {
+                var query = from movie in this.netChillContext.Movies
+                            where movie.AvailabilityStarts > DateTime.Now
+                            select movie;
 
-            var query = from movie in this.netChillContext.Movies
-                        where movie.AvailabilityStarts > DateTime.Now
-                        select movie;
+                return query;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                return null;
+            }
 
-            return query;
+           
         }
     }
 }
