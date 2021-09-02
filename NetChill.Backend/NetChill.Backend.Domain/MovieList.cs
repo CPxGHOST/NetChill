@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetChill.Server.Domain
+namespace NetChill.Backend.Domain
 {
    public class MovieList
    {

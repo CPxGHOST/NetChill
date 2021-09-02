@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace NetChill.Server.Presentation.Areas.HelpPage.ModelDescriptions
+namespace NetChill.Backend.Presentation.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

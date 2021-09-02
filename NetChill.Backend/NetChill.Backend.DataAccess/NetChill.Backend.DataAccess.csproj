@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202109020801438_MigrationV4.designer.cs">
       <DependentUpon>202109020801438_MigrationV4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109021008130_MigrationV41.cs" />
+    <Compile Include="Migrations\202109021008130_MigrationV41.designer.cs">
+      <DependentUpon>202109021008130_MigrationV41.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\MovieListDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,9 +82,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetChill.Backend.Domain\NetChill.Server.Domain.csproj">
+    <ProjectReference Include="..\NetChill.Backend.Domain\NetChill.Backend.Domain.csproj">
       <Project>{CE052512-92FB-4965-9FDA-F34FFC291471}</Project>
-      <Name>NetChill.Server.Domain</Name>
+      <Name>NetChill.Backend.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109020801438_MigrationV4.resx">
       <DependentUpon>202109020801438_MigrationV4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109021008130_MigrationV41.resx">
+      <DependentUpon>202109021008130_MigrationV41.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

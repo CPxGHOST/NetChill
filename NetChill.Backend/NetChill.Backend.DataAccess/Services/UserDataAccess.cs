@@ -1,12 +1,9 @@
-using NetChill.Server.Domain;
+using NetChill.Backend.Domain;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public class UserDataAccess : IUserDataAccess
     {
@@ -44,22 +41,41 @@ namespace NetChill.Server.DataAccess.Services
                 var userToBeFound = this._context.Users.Find(user);
                 return userToBeFound != null;
             }
-            catch (Exception exception) {
+            catch (Exception exception) 
+            {
                 Console.WriteLine(exception);
                 return false;
             }
         }
 
+        /// <inheritdoc cref="IUserDataAccess.GetUserById(Guid)"/>
         public User GetUserById(Guid id)
         {
-            return _context.Users.FirstOrDefault(u => u.Id.Equals(id));
+            try
+            {
+                return _context.Users.FirstOrDefault(u => u.Id.Equals(id));
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception);
+                return null;
+            }
+
         }
 
+        /// <inheritdoc cref="IUserDataAccess.UpdateUser(User)"/>
         public void UpdateUser(User user)
         {
-            var entry = _context.Entry(user);
-            entry.State = EntityState.Modified;
-            _context.SaveChanges();
+            try
+            {
+                var entry = _context.Entry(user);
+                entry.State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
         }
     }
 }

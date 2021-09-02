@@ -4,7 +4,7 @@ using System;
 
 namespace NetChill.Backend.BusinessLogic
 {
-    public class UserBusinessLogic
+    class UserBusinessLogic
     {
         private readonly IUserDataAccess _userDataAccess;
         public UserBusinessLogic()
@@ -33,4 +33,3 @@ namespace NetChill.Backend.BusinessLogic
         }
     }
 }
- 

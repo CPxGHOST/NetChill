@@ -1,4 +1,4 @@
-namespace NetChill.Server.Presentation.Areas.HelpPage
+namespace NetChill.Backend.Presentation.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

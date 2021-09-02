@@ -1,6 +1,6 @@
 using System;
 
-namespace NetChill.Server.Presentation.Areas.HelpPage
+namespace NetChill.Backend.Presentation.Areas.HelpPage
 {
     /// <summary>
     /// This represents an image sample on the help page. There's a display template named ImageSample associated with this class.

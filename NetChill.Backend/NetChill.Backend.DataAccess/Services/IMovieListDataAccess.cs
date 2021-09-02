@@ -1,11 +1,11 @@
-﻿using NetChill.Server.Domain;
+﻿using NetChill.Backend.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetChill.Server.DataAccess.Services
+namespace NetChill.Backend.DataAccess.Services
 {
     public interface IMovieListDataAccess
     {
