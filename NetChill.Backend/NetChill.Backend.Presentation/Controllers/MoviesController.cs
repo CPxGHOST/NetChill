@@ -24,7 +24,7 @@ namespace NetChill.Backend.Presentation.Controllers
 
         [HttpGet]
         [Route("Movies/{id}")]
-        public IHttpActionResult GetMovie(int id) {
+        public IHttpActionResult GetMovie(Guid id) {
             return Ok(new { Message = id });
         }
     
