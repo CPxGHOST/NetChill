@@ -19,14 +19,27 @@ namespace NetChill.Backend.Presentation.Controllers
         [HttpGet]
         [Route("Movies")]
         public IHttpActionResult GetAllMovies() {
-            return Ok(new { Message = "All Movies" });
+            return Ok(new { Movie = "All Movies" });
         }
 
         [HttpGet]
         [Route("Movies/{id}")]
         public IHttpActionResult GetMovie(Guid id) {
-            return Ok(new { Message = id });
+            return Ok(new { Movie = id });
+        }
+
+        [HttpPost]
+        [Route("Movies")]
+        public IHttpActionResult AddMovie() {
+            return Ok(new { Movie = "Added" });
+        }
+
+        [HttpPut]
+        [Route("Movies/{id}")]
+        public IHttpActionResult UpdateMovie() {
+            return Ok(new { Movie = "Updated" });
         }
     
     }
+
 }
