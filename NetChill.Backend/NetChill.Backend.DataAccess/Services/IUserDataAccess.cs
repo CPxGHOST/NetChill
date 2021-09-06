@@ -30,6 +30,13 @@ namespace NetChill.Backend.DataAccess.Services
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        User GetUserByEmail(string email);
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="user"></param>
         void UpdateUser(User user);
 
