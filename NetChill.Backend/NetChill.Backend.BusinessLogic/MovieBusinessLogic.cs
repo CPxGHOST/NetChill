@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace NetChill.Backend.BusinessLogic
 {
-    class MovieBusinessLogic
+   public class MovieBusinessLogic
     {
         private readonly MovieDataAccess _movieDataAccess;
 

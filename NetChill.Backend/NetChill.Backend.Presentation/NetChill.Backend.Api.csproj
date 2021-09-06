@@ -198,6 +198,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -290,6 +291,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetChill.Backend.BusinessLogic\NetChill.Backend.BusinessLogic.csproj">
+      <Project>{2BF043B2-5322-4E95-A07E-54BC779CC8B9}</Project>
+      <Name>NetChill.Backend.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetChill.Backend.DataAccess\NetChill.Backend.DataAccess.csproj">
       <Project>{cf7dd117-98c4-445c-aa37-22f30ae138af}</Project>
       <Name>NetChill.Backend.DataAccess</Name>
