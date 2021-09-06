@@ -30,5 +30,19 @@ namespace NetChill.Backend.DataAccess.Services
         /// </summary>
         /// <returns>An enumerable having all the latest movies</returns>
         IEnumerable<Movie> GetNewReleases();
+
+        /// <summary>
+        /// Gets the movie corresponding to the movie id
+        /// </summary>
+        /// <param name="id">Movie id</param>
+        /// <returns>Movie having the same id as in the parameter</returns>
+        Movie GetMovieByMovieId(Guid id);
+
+        /// <summary>
+        /// Adds Movies to the database
+        /// </summary>
+        /// <param name="movie">The movie to be added</param>
+        /// <returns>true if the movie is saved successfully</returns>
+        bool AddMovie(Movie movie);    
     }
 }

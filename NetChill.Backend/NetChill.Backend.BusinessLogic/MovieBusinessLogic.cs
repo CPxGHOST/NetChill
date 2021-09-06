@@ -1,5 +1,6 @@
 ﻿using NetChill.Backend.DataAccess.Services;
 using NetChill.Backend.Domain;
+using System;
 using System.Collections.Generic;
 
 namespace NetChill.Backend.BusinessLogic
@@ -33,5 +34,14 @@ namespace NetChill.Backend.BusinessLogic
             return _movieDataAccess.GetNewReleases();
         }
 
+        public Movie GetMovieByMovieId(Guid id)
+        {
+            return _movieDataAccess.GetMovieByMovieId(id);
+        }
+
+        public bool AddMovie(Movie movie) {
+            return _movieDataAccess.AddMovie(movie);
+        }
+        
     }
 }
