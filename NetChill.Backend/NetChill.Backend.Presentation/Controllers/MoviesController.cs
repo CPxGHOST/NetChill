@@ -1,4 +1,5 @@
 ﻿using NetChill.Backend.BusinessLogic;
+using NetChill.Backend.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Http;
 
 namespace NetChill.Backend.Presentation.Controllers
 {
+    [RoutePrefix("api/movies")]
     public class MoviesController : ApiController
     {
         private readonly MovieBusinessLogic _movieBusinessLogic;
@@ -17,25 +19,41 @@ namespace NetChill.Backend.Presentation.Controllers
         }
 
         [HttpGet]
-        [Route("Movies")]
+        [Route()]
         public IHttpActionResult GetAllMovies() {
-            return Ok(new { Movie = "All Movies" });
+            var movies = _movieBusinessLogic.GetAllMovies();
+            return Ok(new { Movie = movies});
         }
 
         [HttpGet]
-        [Route("Movies/{id}")]
+        [Route("{id}")]
         public IHttpActionResult GetMovie(Guid id) {
-            return Ok(new { Movie = id });
+            Movie movie = (Movie)_movieBusinessLogic.GetMovieByMovieId(id);
+            return Ok(new { SingleMovie = movie});
         }
 
         [HttpPost]
-        [Route("Movies")]
-        public IHttpActionResult AddMovie() {
-            return Ok(new { Movie = "Added" });
+        [Route()]
+        public IHttpActionResult AddMovie(Movie movie) {
+            try
+            {
+                var res = _movieBusinessLogic.AddMovie(movie);
+                if (res)
+                {
+                    return Ok();
+                }
+                else {
+                    return InternalServerError();
+                }
+            }
+            catch (Exception exception) {
+                Console.WriteLine(exception);
+                return InternalServerError(exception);
+            }
         }
 
         [HttpPut]
-        [Route("Movies/{id}")]
+        [Route("{id}")]
         public IHttpActionResult UpdateMovie() {
             return Ok(new { Movie = "Updated" });
         }
