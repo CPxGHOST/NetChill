@@ -17,7 +17,7 @@ namespace NetChill.Backend.DataAccess.Services
         }
 
 
-        /// <inheritdoc cref="IUserDataAccess.DoesUserExist(User)"/>
+        /// <inheritdoc cref="IUserDataAccess.AddUser(User)"/>
         public bool AddUser(User user)
         {
             try
@@ -62,6 +62,12 @@ namespace NetChill.Backend.DataAccess.Services
                 return null;
             }
 
+        }
+
+        /// <inheritdoc cref="IUserDataAccess.GetUserByEmail(string)"/>
+        public User GetUserByEmail(string email)
+        {
+            return _context.Users.FirstOrDefault(u => u.Email.Equals(email));
         }
 
         /// <inheritdoc cref="IUserDataAccess.UpdateUser(User)"/>

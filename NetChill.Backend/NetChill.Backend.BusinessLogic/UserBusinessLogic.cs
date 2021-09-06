@@ -1,10 +1,11 @@
 ﻿using NetChill.Backend.DataAccess.Services;
 using NetChill.Backend.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace NetChill.Backend.BusinessLogic
 {
-    class UserBusinessLogic
+    public class UserBusinessLogic
     {
         private readonly IUserDataAccess _userDataAccess;
         public UserBusinessLogic()
@@ -27,9 +28,19 @@ namespace NetChill.Backend.BusinessLogic
             return _userDataAccess.GetUserById(id);
         }
 
+        public User GetUserByEmail(string email)
+        {
+            return _userDataAccess.GetUserByEmail(email);
+        }
+
         public void UpdateUser(User user)
         {
             _userDataAccess.UpdateUser(user);
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            return _userDataAccess.GetAllUsers();
         }
     }
 }
