@@ -1,5 +1,6 @@
 ﻿using NetChill.Backend.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace NetChill.Backend.DataAccess.Services
 {
@@ -31,5 +32,11 @@ namespace NetChill.Backend.DataAccess.Services
         /// </summary>
         /// <param name="user"></param>
         void UpdateUser(User user);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<User> GetAllUsers();
     }
 }

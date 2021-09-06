@@ -1,5 +1,6 @@
 using NetChill.Backend.Domain;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -75,6 +76,19 @@ namespace NetChill.Backend.DataAccess.Services
             catch(Exception exception)
             {
                 Console.WriteLine(exception);
+            }
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            try
+            {
+                return this._context.Users.OrderBy(user => user.Id);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                return null;
             }
         }
     }

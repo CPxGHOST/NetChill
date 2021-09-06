@@ -51,21 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202109011822517_Initial.cs" />
-    <Compile Include="Migrations\202109011822517_Initial.designer.cs">
-      <DependentUpon>202109011822517_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109020755489_MigrationV1.cs" />
-    <Compile Include="Migrations\202109020755489_MigrationV1.designer.cs">
-      <DependentUpon>202109020755489_MigrationV1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109020801438_MigrationV4.cs" />
-    <Compile Include="Migrations\202109020801438_MigrationV4.designer.cs">
-      <DependentUpon>202109020801438_MigrationV4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109021008130_MigrationV41.cs" />
-    <Compile Include="Migrations\202109021008130_MigrationV41.designer.cs">
-      <DependentUpon>202109021008130_MigrationV41.cs</DependentUpon>
+    <Compile Include="Migrations\202109060834009_initial.cs" />
+    <Compile Include="Migrations\202109060834009_initial.designer.cs">
+      <DependentUpon>202109060834009_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\MovieListDataAccess.cs" />
@@ -88,17 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109011822517_Initial.resx">
-      <DependentUpon>202109011822517_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109020755489_MigrationV1.resx">
-      <DependentUpon>202109020755489_MigrationV1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109020801438_MigrationV4.resx">
-      <DependentUpon>202109020801438_MigrationV4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109021008130_MigrationV41.resx">
-      <DependentUpon>202109021008130_MigrationV41.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202109060834009_initial.resx">
+      <DependentUpon>202109060834009_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
