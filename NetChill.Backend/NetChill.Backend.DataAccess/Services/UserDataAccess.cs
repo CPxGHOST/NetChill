@@ -49,8 +49,8 @@ namespace NetChill.Backend.DataAccess.Services
             }
         }
 
-        /// <inheritdoc cref="IUserDataAccess.GetUserById(Guid)"/>
-        public User GetUserById(Guid id)
+        /// <inheritdoc cref="IUserDataAccess.GetUser(Guid)"/>
+        public User GetUser(Guid id)
         {
             try
             {
@@ -64,8 +64,8 @@ namespace NetChill.Backend.DataAccess.Services
 
         }
 
-        /// <inheritdoc cref="IUserDataAccess.GetUserByEmail(string)"/>
-        public User GetUserByEmail(string email)
+        /// <inheritdoc cref="IUserDataAccess.GetUser(string)"/>
+        public User GetUser(string email)
         {
             return _context.Users.FirstOrDefault(u => u.Email.Equals(email));
         }

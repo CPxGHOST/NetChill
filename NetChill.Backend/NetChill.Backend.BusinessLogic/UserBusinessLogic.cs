@@ -23,14 +23,14 @@ namespace NetChill.Backend.BusinessLogic
             _userDataAccess.AddUser(user);
         }
 
-        public User GetUserById(Guid id)
+        public User GetUser(Guid id)
         {
-            return _userDataAccess.GetUserById(id);
+            return _userDataAccess.GetUser(id);
         }
 
-        public User GetUserByEmail(string email)
+        public User GetUser(string email)
         {
-            return _userDataAccess.GetUserByEmail(email);
+            return _userDataAccess.GetUser(email);
         }
 
         public void UpdateUser(User user)
