@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { SignUpPageComponent } from './sign-up/sign-up-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignUpPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: 'signup', component: SignUpPageComponent}
+    ])
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

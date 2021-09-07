@@ -25,9 +25,9 @@ namespace NetChill.Backend.Presentation.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public IHttpActionResult GetUserById(Guid id)
+        public IHttpActionResult GetUser(Guid id)
         {
-            var result = _userBusinessLogic.GetUserById(id);
+            var result = _userBusinessLogic.GetUser(id);
 
             if(result == null)
             {
@@ -43,11 +43,11 @@ namespace NetChill.Backend.Presentation.Controllers
         {
             try
             {
-                var userExists = _userBusinessLogic.GetUserByEmail(user.Email);
+                var userExists = _userBusinessLogic.GetUser(user.Email);
 
                 if (userExists != null)
                 {
-                    ModelState.AddModelError("User", "User already exists");
+                    return InternalServerError();
                 }
                 else
                 {
