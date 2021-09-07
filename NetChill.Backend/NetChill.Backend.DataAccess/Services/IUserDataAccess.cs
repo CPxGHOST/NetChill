@@ -25,14 +25,14 @@ namespace NetChill.Backend.DataAccess.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        User GetUserById(Guid id);
+        User GetUser(Guid id);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        User GetUserByEmail(string email);
+        User GetUser(string email);
 
         /// <summary>
         /// 
