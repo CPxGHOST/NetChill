@@ -3,6 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
+  <div class='container'>
+  <router-outlet></router-outlet>
+  </div>
+  `
+  /*template: `
   <nav class='navbar navbar-expand navbar-light bg-light'>
   <a class='navbar-brand' style="margin-left: 20px">{{title}}</a>
   <ul class='nav nav-pills'>
@@ -14,6 +19,7 @@ import { Component } from '@angular/core';
   <router-outlet></router-outlet>
   </div>
   `
+  */
 })
 export class AppComponent {
   title = 'NetChill-Frontend';
