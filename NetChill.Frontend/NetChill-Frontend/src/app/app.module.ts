@@ -16,9 +16,9 @@ import { SignUpPageComponent } from './sign-up/sign-up-page.component';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'signup', component: SignUpPageComponent}
+      { path: 'signup', component: SignUpPageComponent} , 
+       {path: 'login' , component: LoginComponent}])
   ],
-  providers: [],                      
   bootstrap: [AppComponent]
 })
 export class AppModule { }
