@@ -42,6 +42,10 @@ namespace NetChill.Backend.BusinessLogic
         public bool AddMovie(Movie movie) {
             return _movieDataAccess.AddMovie(movie);
         }
-        
+
+        public bool UpdateMovie(Movie newMovie) {
+            return _movieDataAccess.UpdateMovie(newMovie);
+        }
+    
     }
 }

@@ -29,7 +29,7 @@ namespace NetChill.Backend.Presentation.Controllers
         [Route("{id}")]
         public IHttpActionResult GetMovie(Guid id) {
             Movie movie = (Movie)_movieBusinessLogic.GetMovieByMovieId(id);
-            return Ok(new { SingleMovie = movie});
+            return Ok(new {SingleMovie = movie});
         }
 
         [HttpPost]
@@ -54,7 +54,7 @@ namespace NetChill.Backend.Presentation.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        public IHttpActionResult UpdateMovie() {
+        public IHttpActionResult UpdateMovie(Guid id) {
             return Ok(new { Movie = "Updated" });
         }
     

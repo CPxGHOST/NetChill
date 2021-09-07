@@ -16,7 +16,6 @@ namespace NetChill.Backend.DataAccess.Services
             this._context = new NetChillDbContext();
         }
 
-
         /// <inheritdoc cref="IMovieDataAccess.AddMovie(Movie)"/>
         public bool AddMovie(Movie movie)
         {
@@ -109,6 +108,22 @@ namespace NetChill.Backend.DataAccess.Services
             {
                 Console.WriteLine(exception.Message);
                 return null;
+            }
+        }
+
+        /// <inheritdoc cref="IMovieDataAccess.UpdateMovie(Movie)"/>
+        public bool UpdateMovie(Movie movie)
+        {
+            try
+            {
+                var entry = _context.Entry(movie);
+                entry.State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception exception) {
+                Console.WriteLine(exception);
+                return false;
             }
         }
     }
