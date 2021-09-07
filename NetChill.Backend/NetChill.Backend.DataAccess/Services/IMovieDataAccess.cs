@@ -43,6 +43,13 @@ namespace NetChill.Backend.DataAccess.Services
         /// </summary>
         /// <param name="movie">The movie to be added</param>
         /// <returns>true if the movie is saved successfully</returns>
-        bool AddMovie(Movie movie);    
+        bool AddMovie(Movie movie);
+
+        /// <summary>
+        /// Updates a movie with the new given information
+        /// </summary>
+        /// <param name="movie">The movie with new information</param>
+        /// <returns>true if movie is updated successfully else false</returns>
+        bool UpdateMovie(Movie movie);
     }
 }
