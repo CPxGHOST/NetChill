@@ -39,7 +39,7 @@ namespace NetChill.Backend.DataAccess.Services
         {
             try
             {
-                var userToBeFound = this._context.Users.Find(user);
+                var userToBeFound = this._context.Users.Select(u => u.Email.Equals(user.Email) && u.Password.Equals(user.Password));
                 return userToBeFound != null;
             }
             catch (Exception exception) 

@@ -28,7 +28,7 @@ namespace NetChill.Backend.BusinessLogic
             return _userDataAccess.GetUser(id);
         }
 
-        public User GetUser(string email)
+        public User GetUserByEmail(string email)
         {
             return _userDataAccess.GetUser(email);
         }
