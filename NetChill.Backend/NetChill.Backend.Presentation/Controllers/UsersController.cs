@@ -39,44 +39,6 @@ namespace NetChill.Backend.Presentation.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
-        [Route()]
-        public IHttpActionResult SignUp(User user)
-        {
-            Console.WriteLine("In .net server value = " + user);
-
-            try
-            {
-                var userExists = _userBusinessLogic.GetUser(user.Email);
-
-                if (userExists != null)
-                {
-                    return InternalServerError();
-                }
-                else
-                {
-                    if (ModelState.IsValid)
-                    {
-                        User newUser = new User
-                        {
-                            FullName = user.FullName,
-                            Email = user.Email,
-                            Password = user.Password,
-                            Role = user.Role
-                        };
-
-                        _userBusinessLogic.AddUser(newUser);
-                        return Ok();
-                    }
-                }
-                
-            }
-            catch(Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-
-            return BadRequest(ModelState);
-        }
+    
     }
 }

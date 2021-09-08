@@ -7,12 +7,17 @@ import { IUser } from "../models/IUser";
 })
 
 export class UserService {
-    private dataUrl = "https://localhost:44322/api/users";
+    private loginUrl = "https://localhost:44322/api/login";
+    private signUpUrl = "https://localhost:44322/api/signup";
     constructor(private http: HttpClient) { }
 
     AddUser(user: IUser) {
-
         console.log(`In Data Service = ${user.Email}`);
-        return this.http.post(this.dataUrl, user);
+        return this.http.post(this.signUpUrl, user);
+    }
+
+    LoginUser(user: IUser) {
+        console.log(`In Data Service = ${user}`);
+        return this.http.post(this.loginUrl, user);
     }
 }
