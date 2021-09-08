@@ -11,6 +11,8 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     AddUser(user: IUser) {
+
+        console.log(`In Data Service = ${user.Email}`);
         return this.http.post(this.dataUrl, user);
     }
 }

@@ -2,9 +2,11 @@
 using NetChill.Backend.Domain;
 using System;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace NetChill.Backend.Presentation.Controllers
 {
+    [EnableCors(origins: "*"  , headers:"*" , methods:"*")]
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
@@ -41,6 +43,8 @@ namespace NetChill.Backend.Presentation.Controllers
         [Route()]
         public IHttpActionResult SignUp(User user)
         {
+            Console.WriteLine("In .net server value = " + user);
+
             try
             {
                 var userExists = _userBusinessLogic.GetUser(user.Email);

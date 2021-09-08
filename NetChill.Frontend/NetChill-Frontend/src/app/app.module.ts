@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ import { SignUpPageComponent } from './components/sign-up/sign-up-page.component
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'signup', component: SignUpPageComponent} , 
        {path: 'login' , component: LoginComponent}])
