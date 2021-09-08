@@ -1,0 +1,44 @@
+<app-after-login-navbar></app-after-login-navbar>
+<div class="row">
+    <div class="col">
+        <div class="card h-50 mt-5">
+            <img src="..." class="card-img-top" alt="...">
+        </div>
+        <br><br>
+        <label for="myfile">Upload Movie Poster :</label>
+        <input type="file" id="myfile" name="myfile">
+    </div>
+    <div class="col">
+        <form>
+            <div class="form-group">
+                <label for="movieName" class="form-label" >Name :</label>
+                <input type="text" class="form-control" id="movieName">
+            </div>
+            <div class="form-group">
+                <label for="category"  class="form-label">Category :</label>
+                <input type="number" class="form-control" id="category">
+            </div>
+            <div class="form-group">
+                <label for="releaseDate"  class="form-label">Year of Release :</label>
+                <input type="number" class="form-control" id="releaseDate">
+            </div>
+            <div class="form-group">
+                <label for="availabilityStarts">Availability Starts :</label>
+                <input type="date" id="availabilityStarts" name="availabilityStarts">
+            </div>
+            <div class="form-group">
+                <label for="description" class="form-label">Description :</label>
+                <textarea name="description" id="description" class= "form-control" cols="40" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="isFeatured">Is Featured :</label>
+                <input type="checkbox" id="isFeatured" name="isFeatured" value="tick">
+            </div>
+            <div class="form-group">
+                <label for="myfile">Content Path :</label>
+                <input type="file" id="myfile" name="myfile"><br><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Add New Movie</button>
+        </form>
+    </div>
+</div>
