@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   <router-outlet></router-outlet>
   </div>
   `
-  /*template: `
+  /*
+  template: `
   <nav class='navbar navbar-expand navbar-light bg-light'>
   <a class='navbar-brand' style="margin-left: 20px">{{title}}</a>
   <ul class='nav nav-pills'>
