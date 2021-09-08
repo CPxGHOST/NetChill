@@ -13,6 +13,8 @@ namespace NetChill.Backend.Presentation
             // Web API configuration and services
             AutofacConfig.Register();
 
+            config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

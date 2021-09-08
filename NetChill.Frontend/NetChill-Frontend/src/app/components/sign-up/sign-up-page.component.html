@@ -1,5 +1,5 @@
-<body>
-    <app-before-login-navbar></app-before-login-navbar>
+
+   <app-before-login-navbar></app-before-login-navbar>
     <div class="row">
         <div class="col"></div>
         <div class="col form">
@@ -8,20 +8,20 @@
                 <small class="form-text text-muted">Please fill this form to create an account.</small>
             </div>
             <br>
-            <form>
+            <form #signUpForm="ngForm" (ngSubmit) = "onSubmit(signUpForm)">
                 <div class="form-group">
-                    <label for="name" class="form-label">Name :</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                    <label for="name">Name :</label>
+                    <input type="text" class="form-control" name="FullName" id="name" placeholder="Enter name" ngModel required>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="email" class="form-label">Email :</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email-address">
+                    <label for="email">Email :</label>
+                    <input type="email" class="form-control" name="Email" id="email" placeholder="Enter email-address" ngModel required>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="password" class="form-label">Password :</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+                    <label for="password">Password :</label>
+                    <input type="password" class="form-control" name="Password" id="password" placeholder="Enter password" ngModel required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Join Now</button> 
@@ -32,4 +32,4 @@
         </div>
         <div class="col"></div>
     </div>
-</body>
+
