@@ -28,12 +28,12 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'signup', component: SignUpPageComponent} , 
+      {path: 'signup', component: SignUpPageComponent} , 
       {path: 'login' , component: LoginComponent},
-      { path: 'home', component: HomeComponent },
-      { path: 'movies', component: MovieListComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' }
+      {path: 'home', component: HomeComponent },
+      {path: ':id/movies', component: MovieListComponent },
+      {path: '', redirectTo: 'home', pathMatch: 'full' },
+      {path: '**', redirectTo: 'home', pathMatch: 'full' }
     ])
   ],
   bootstrap: [AppComponent]

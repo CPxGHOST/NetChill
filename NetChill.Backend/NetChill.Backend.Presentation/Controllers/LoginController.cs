@@ -37,7 +37,8 @@ namespace NetChill.Backend.Presentation.Controllers
                 if (result)
                 {
                     user = _userBusinessLogic.GetUserByEmail(loginUser.Email);
-                    return Ok(new { loggedInUser = user });
+                    
+                    return Ok(new {loggedInUser = user });
                 }
                 else {
                     return NotFound();
