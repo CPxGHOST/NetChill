@@ -30,13 +30,14 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'signup', component: SignUpPageComponent} , 
+      {path: 'signup', component: SignUpPageComponent} , 
       {path: 'login' , component: LoginComponent},
       { path: 'home', component: HomeComponent },
       { path: 'upload', component: UploadContentComponent},
       { path: 'movies', component: MovieListComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
+
     ])
   ],
   bootstrap: [AppComponent]
