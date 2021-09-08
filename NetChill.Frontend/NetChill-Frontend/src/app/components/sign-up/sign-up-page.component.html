@@ -1,4 +1,3 @@
-<body>
     <div class="row">
         <div class="col"></div>
         <div class="col form">
@@ -7,20 +6,20 @@
                 <small class="form-text text-muted">Please fill this form to create an account.</small>
             </div>
             <br>
-            <form>
+            <form #signUpForm="ngForm" (ngSubmit) = "onSubmit(signUpForm)">
                 <div class="form-group">
                     <label for="name">Name :</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+                    <input type="text" class="form-control" name="FullName" id="name" placeholder="Enter name" ngModel required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="email">Email :</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email-address">
+                    <input type="email" class="form-control" name="Email" id="email" placeholder="Enter email-address" ngModel required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="password">Password :</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+                    <input type="password" class="form-control" name="Password" id="password" placeholder="Enter password" ngModel required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Join Now</button> 
@@ -31,4 +30,4 @@
         </div>
         <div class="col"></div>
     </div>
-</body>
+

@@ -8,12 +8,12 @@ namespace NetChill.Backend.DataAccess.Services
 {
     public class UserDataAccess : IUserDataAccess
     {
-
         private readonly NetChillDbContext _context;
 
         public UserDataAccess()
         {
             this._context = new NetChillDbContext();
+            
         }
 
 
