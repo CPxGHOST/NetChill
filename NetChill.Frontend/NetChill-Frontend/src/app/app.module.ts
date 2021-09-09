@@ -11,9 +11,11 @@ import { BeforeLoginNavbarComponent } from './components/shared/before-login-nav
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UploadContentComponent } from './components/upload-content/upload-content.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
