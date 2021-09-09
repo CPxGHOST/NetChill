@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-movie-card',
@@ -6,10 +6,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent implements OnInit {
-  cardTitle : string = 'Upcoming';
-
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 }

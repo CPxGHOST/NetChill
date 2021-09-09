@@ -1,5 +1,4 @@
 ﻿using NetChill.Backend.BusinessLogic;
-using NetChill.Backend.Domain;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -38,7 +37,5 @@ namespace NetChill.Backend.Presentation.Controllers
 
             return Ok(result);
         }
-
-    
     }
 }
