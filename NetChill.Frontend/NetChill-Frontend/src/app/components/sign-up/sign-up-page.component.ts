@@ -19,6 +19,7 @@ export class SignUpPageComponent implements OnInit {
   onSubmit(signUpForm: NgForm) {
     if (signUpForm.valid) {
       this.newUser = {
+        Id: '',
         Email: signUpForm.value.Email,
         FullName: signUpForm.value.FullName,
         Password: signUpForm.value.Password,

@@ -31,7 +31,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
       {path: 'signup', component: SignUpPageComponent} , 
       {path: 'login' , component: LoginComponent},
       {path: 'home', component: HomeComponent },
-      {path: ':id/movies', component: MovieListComponent },
+      {path: 'movies', component: MovieListComponent },
       {path: '', redirectTo: 'home', pathMatch: 'full' },
       {path: '**', redirectTo: 'home', pathMatch: 'full' }
     ])
