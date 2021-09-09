@@ -11,6 +11,7 @@ import { BeforeLoginNavbarComponent } from './components/shared/before-login-nav
 import { HomeComponent } from './components/home/home.component';
 import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
 
 @NgModule({
   declarations: [
@@ -21,19 +22,21 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
     BeforeLoginNavbarComponent,
     MovieListComponent,
     HomeComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'signup', component: SignUpPageComponent} , 
-      {path: 'login' , component: LoginComponent},
-      {path: 'home', component: HomeComponent },
-      {path: 'movies', component: MovieListComponent },
-      {path: '', redirectTo: 'home', pathMatch: 'full' },
-      {path: '**', redirectTo: 'home', pathMatch: 'full' }
+      { path: 'signup', component: SignUpPageComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'movies', component: MovieListComponent },
+      { path: 'addmovie', component: AddMovieComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ])
   ],
   bootstrap: [AppComponent]

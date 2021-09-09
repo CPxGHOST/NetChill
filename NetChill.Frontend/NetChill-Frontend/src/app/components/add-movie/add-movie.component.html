@@ -1,0 +1,39 @@
+    <form class="form-container">
+        <div class="left-side-form">
+            <div class="img-container">
+                <p>Image preview Here</p>
+                <img [src]="imageSrc" *ngif = "imageSrc" alt="" style="height:22rem; width:20rem ;"> 
+            </div>
+            <input #file type="file"  accept="image/*"  (change) = "preview(file.files)" style="margin-left: 8rem; margin-top: 1rem;">    
+        </div>
+        <div class="right-side-form">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Category">Category</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Year">Year of Release</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Availability">Availability Starts</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea cols="75" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="IsFeatured">Is Featured</label>
+                <input type="checkbox" style="margin-left: 1rem;">
+            </div>
+            <div class="form-group">
+                <label for="Content Path" style="margin-right: 2rem;">Content Path</label>
+                <input type="file" >
+            </div>
+        </div>
+    </form>
