@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MovieService } from 'src/app/data-service/movie-service.component';
 import { userDataService } from 'src/app/data-service/userData-service.component';
+import { IMovie } from 'src/app/models/IMovie';
 
 @Component({
   selector: 'app-add-movie',
@@ -8,7 +11,8 @@ import { userDataService } from 'src/app/data-service/userData-service.component
 })
 export class AddMovieComponent implements OnInit {
   imageSrc!: any;  
-  constructor(private userDataService: userDataService) { }
+  newMovie!: IMovie;
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +38,32 @@ export class AddMovieComponent implements OnInit {
     reader.onload = (_event) => {
       this.imageSrc = reader.result;
     }
+  }
+
+  Submit(addMovieForm: NgForm){
+    if(addMovieForm.valid){
+        this.newMovie = {
+          Id: "",
+          AvailabilityStarts: addMovieForm.value.AvailabilityStarts,
+          Name: addMovieForm.value.Name,
+          Category: addMovieForm.value.Category,
+          ContentPath: addMovieForm.value.ContentPath,
+          Description: addMovieForm.value.Description,
+          IsFeatured: addMovieForm.value.IsFeatured,
+          PosterPath: addMovieForm.value.PosterPath,
+          YearOfRelease: addMovieForm.value.YearOfRelease
+        }
+    
+        this.movieService.AddMovie(this.newMovie).subscribe(
+          (res) => {
+            console.log(res);
+          },
+          (err) => {
+            console.log(err);
+          }
+        ) 
+    
+      }
   }
 
 }
