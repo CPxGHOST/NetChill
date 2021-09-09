@@ -25,7 +25,8 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
     MovieListComponent,
     HomeComponent,
     MovieCardComponent,
-    UploadContentComponent
+    UploadContentComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,
