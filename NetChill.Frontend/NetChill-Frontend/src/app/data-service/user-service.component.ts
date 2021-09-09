@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { IUser } from "../models/IUser";
 
 @Injectable({
@@ -16,8 +17,8 @@ export class UserService {
         return this.http.post(this.signUpUrl, user);
     }
 
-    LoginUser(user: IUser) {
+    LoginUser(user: IUser): Observable<IUser> {
         console.log(`In Data Service = ${user}`);
-        return this.http.post(this.loginUrl, user);
+        return this.http.post<IUser>(this.loginUrl, user);
     }
 }

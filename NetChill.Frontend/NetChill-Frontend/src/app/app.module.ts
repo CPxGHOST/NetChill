@@ -11,7 +11,9 @@ import { BeforeLoginNavbarComponent } from './components/shared/before-login-nav
 import { HomeComponent } from './components/home/home.component';
 import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UploadContentComponent } from './components/upload-content/upload-content.component';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +32,14 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'signup', component: SignUpPageComponent} , 
-      {path: 'login' , component: LoginComponent},
-      { path: 'home', component: HomeComponent },
-      { path: 'upload', component: UploadContentComponent},
-      { path: 'movies', component: MovieListComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' }
+     { path: 'addmovie', component: AddMovieComponent },
+     { path: 'signup', component: SignUpPageComponent} , 
+     { path: 'login' , component: LoginComponent},
+     { path: 'home', component: HomeComponent },
+     { path: 'upload', component: UploadContentComponent},
+     { path: 'movies', component: MovieListComponent },
+     { path: '', redirectTo: 'home', pathMatch: 'full' },
+     { path: '**', redirectTo: 'home', pathMatch: 'full' }
 
     ])
   ],
