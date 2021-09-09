@@ -1,16 +1,50 @@
-<app-before-login-navbar></app-before-login-navbar>
-<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search.." name="search2">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-<div class="row">
-    <div class="row">
-      <app-movie-card></app-movie-card>
+<app-after-login-navbar></app-after-login-navbar>
+<div class="card mt-4">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="/movies">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/movies">Featured</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/movies">New Releases</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/movies">Upcoming</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/movies">My List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/upload">Upload Content</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/movies">Revoke Subscription</a>
+            </li>
+        </ul>
     </div>
-    <div class="row">
-      <app-movie-card></app-movie-card>
-    </div>
-    <div class="row">
-      <app-movie-card></app-movie-card>
+    <div class="card-body">
+        <div class="row">
+            <div class="row">
+              <div class="card mt-4" id="inside-card">
+                <div class="card-header"><b>Featured</b></div>
+                <app-movie-card></app-movie-card>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card mt-4" id="inside-card">
+                <div class="card-header"><b>Upcoming</b></div>
+                <app-movie-card></app-movie-card>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card mt-4" id="inside-card">
+                <div class="card-header"><b>New Releases</b></div>
+                <app-movie-card></app-movie-card>
+              </div>
+            </div>
+        </div>
     </div>
 </div>
