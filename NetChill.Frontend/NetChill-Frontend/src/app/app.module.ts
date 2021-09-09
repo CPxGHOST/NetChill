@@ -33,11 +33,10 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-     { path: 'addmovie', component: AddMovieComponent },
      { path: 'signup', component: SignUpPageComponent} , 
      { path: 'login' , component: LoginComponent},
      { path: 'home', component: HomeComponent },
-     { path: 'upload', component: UploadContentComponent},
+     { path: 'upload', component: AddMovieComponent},
      { path: 'movies', component: MovieListComponent },
      { path: '', redirectTo: 'home', pathMatch: 'full' },
      { path: '**', redirectTo: 'home', pathMatch: 'full' }
