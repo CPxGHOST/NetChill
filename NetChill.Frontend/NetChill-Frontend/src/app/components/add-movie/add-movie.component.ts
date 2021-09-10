@@ -56,6 +56,7 @@ export class AddMovieComponent implements OnInit {
     
         this.movieService.AddMovie(this.newMovie).subscribe(
           (res) => {
+            alert(`Added ${this.newMovie.Name}`);
             console.log(res);
           },
           (err) => {

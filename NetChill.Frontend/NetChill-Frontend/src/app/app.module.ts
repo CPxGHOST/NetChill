@@ -13,8 +13,11 @@ import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UploadContentComponent } from './components/upload-content/upload-content.component';
+import { AllMoviesComponent } from './components/all-movies/all-movies.component';
+import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { HomeComponent } from './components/home/home.component';
     WelcomeComponent,
     MovieCardComponent,
     UploadContentComponent,
+    AddMovieComponent,
+    AllMoviesComponent,
+    FeaturedMoviesComponent
     ViewMovieComponent,
     HomeComponent
   ],
@@ -36,6 +42,7 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: 'featured', component: FeaturedMoviesComponent},
       { path: 'signup', component: SignUpPageComponent} , 
       {path: 'login' , component: LoginComponent},
       { path: 'welcome', component: WelcomeComponent },
