@@ -9,7 +9,7 @@ import { SignUpPageComponent } from './components/sign-up/sign-up-page.component
 import { AfterLoginNavbarComponent } from './components/shared/after-login-navbar/after-login-navbar.component';
 import { BeforeLoginNavbarComponent } from './components/shared/before-login-navbar/before-login-navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UploadContentComponent } from './components/upload-content/upload-content.component';
