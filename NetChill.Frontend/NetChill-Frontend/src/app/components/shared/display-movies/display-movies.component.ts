@@ -20,7 +20,6 @@ export class DisplayMoviesComponent implements OnInit {
   constructor(private movieService: MovieService , private router : Router){}
 
   ngOnInit(): void {
-    alert(this.getValue);
     if(this.getValue == 0){
       this.GetAllMovies();
     }else if(this.getValue == 1){
@@ -35,7 +34,6 @@ export class DisplayMoviesComponent implements OnInit {
       alert("Error!! Returning to home!");
       this.router.navigate(['/movies']);
     }
-   
   }
 
   GetAllMovies(){

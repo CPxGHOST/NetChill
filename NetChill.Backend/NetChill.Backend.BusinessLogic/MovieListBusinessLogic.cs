@@ -3,7 +3,7 @@ using NetChill.Backend.Domain;
 
 namespace NetChill.Backend.BusinessLogic
 {
-    class MovieListBusinessLogic
+    public class MovieListBusinessLogic
     {
         private readonly MovieListDataAccess _movieListDataAcces;
 
