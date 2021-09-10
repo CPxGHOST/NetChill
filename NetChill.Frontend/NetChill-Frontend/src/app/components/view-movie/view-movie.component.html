@@ -3,7 +3,7 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="true" href="/movies">Home</a>
+              <a class="nav-link active" aria-current="true" href="/home">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/movies">Featured</a>
@@ -26,17 +26,36 @@
         </ul>
     </div>
     <div class="card-body">
-        <div class="row">
+        <div class="row" *ngIf='movie'>
             <div class="col">
-                <img src="../../../assets/avatar.jfif" class="card-img-top" alt="..." id="in-view">
+                <!--<img src="../../../assets/avatar.jfif" class="card-img-top" alt="..." id="in-view">-->
+                <div class="card">
+                    <div class="card-header" style="font-weight: bold;">
+                        {{movie.Name}}
+                    </div>
+                    <div class='card-body'>
+                        <div class='row'>
+                            <div class='col-md-8'>
+                                <div class='row'>
+                                    <div class='col-md-4'>Category :</div>
+                                    <div class='col-md-8'>{{movie.Category}}</div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-md-4'>YOR :</div>
+                                    <div class='col-md-8'>{{movie.YearOfRelease}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col">
                 <button type="submit" class="btn btn-primary mt-5">Add to list</button>
-                <h5 class="mt-5">Avatar [2009]</h5>
-                <p>
-                Jake Sully and Ney'tiri have formed a family and are doing everything to stay 
+                <h5 class="mt-5"> {{movie.Name}} <span>[</span>{{movie.YearOfRelease}}<span>]</span></h5>
+                <p>{{movie.Description}}
+                <!--Jake Sully and Ney'tiri have formed a family and are doing everything to stay 
                 together. However, they must leave their home and explore the regions of Pandora. 
-                When an ancient threat resurfaces, Jake must fight a difficult war against the humans.
+                When an ancient threat resurfaces, Jake must fight a difficult war against the humans.-->
                 </p>
             </div>
         </div>

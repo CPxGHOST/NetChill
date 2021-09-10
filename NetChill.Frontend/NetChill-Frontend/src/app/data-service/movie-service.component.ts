@@ -14,4 +14,12 @@ export class MovieService{
     AddMovie(movie: IMovie){
       return this.http.post<IMovie>(this.movieUrl , movie);
     }
+
+    GetAllMovies(){
+      return this.http.get<IMovie[]>(this.movieUrl);
+    }
+
+    GetMovie(id : string){
+      return this.http.get<IMovie>(this.movieUrl + `/${id}`);
+    }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MovieService } from 'src/app/data-service/movie-service.component';
+import { IMovie } from 'src/app/models/IMovie';
 
 @Component({
   selector: 'app-view-movie',
@@ -6,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-movie.component.css']
 })
 export class ViewMovieComponent implements OnInit {
+    errorMessage = '';
+    movie: IMovie | undefined;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    constructor(private route: ActivatedRoute,
+      private router: Router,
+      private movieService: MovieService) {
+    }
+    
+    ngOnInit(): void {
+      const id = this.route.snapshot.paramMap.get('id');
+      console.log(id);
+      if (id) {
+        this.GetMovie(id);
+      }
+    }
+    
+    GetMovie(id: string){
+      this.movieService.GetMovie(id).subscribe(
+        {
+            next: movie => {
+              this.movie = movie;
+              console.log(this.movie);
+            },
+            error: err => this.errorMessage = err
+        }
+    )}
 }

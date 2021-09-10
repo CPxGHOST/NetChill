@@ -1,26 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { userDataService } from 'src/app/data-service/userData-service.component';
-import { IUser } from 'src/app/models/IUser';
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  selector: 'app-movies-navbar',
+  templateUrl: './movies-navbar.component.html',
+  styleUrls: ['./movies-navbar.component.css']
 })
-export class MovieListComponent implements OnInit {
-
+export class MoviesNavbarComponent implements OnInit {
   public isAdmin: boolean = false;
 
   constructor(private userDataService: userDataService) {
-      if(userDataService.loggedInUser.Role == 1){
+      if(this.userDataService.loggedInUser != null && this.userDataService.loggedInUser.Role == 1){
         this.isAdmin = true;
       }
    }
 
   ngOnInit(): void {
-   
   }
-
-  
 
 }
