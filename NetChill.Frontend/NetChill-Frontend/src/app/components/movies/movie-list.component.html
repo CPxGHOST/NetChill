@@ -18,10 +18,10 @@
                 <a class="nav-link" href="/movies">My List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/upload">Upload Content</a>
+                <a class="nav-link" href="/upload" *ngIf="isAdmin">Upload Content</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/movies">Revoke Subscription</a>
+                <a class="nav-link" href="/movies" *ngIf="isAdmin">Revoke Subscription</a>
             </li>
         </ul>
     </div>
