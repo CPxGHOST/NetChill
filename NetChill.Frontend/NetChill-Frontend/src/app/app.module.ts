@@ -13,6 +13,8 @@ import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UploadContentComponent } from './components/upload-content/upload-content.component';
+import { AllMoviesComponent } from './components/all-movies/all-movies.component';
+import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 
 
 @NgModule({
@@ -26,21 +28,23 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
     HomeComponent,
     MovieCardComponent,
     UploadContentComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    AllMoviesComponent,
+    FeaturedMoviesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-     { path: 'signup', component: SignUpPageComponent} , 
-     { path: 'login' , component: LoginComponent},
-     { path: 'home', component: HomeComponent },
-     { path: 'upload', component: AddMovieComponent},
-     { path: 'movies', component: MovieListComponent },
-     { path: '', redirectTo: 'home', pathMatch: 'full' },
-     { path: '**', redirectTo: 'home', pathMatch: 'full' }
-
+     { path: 'signup',   component: SignUpPageComponent}, 
+     { path: 'login',    component: LoginComponent},
+     { path: 'home',     component: HomeComponent },
+     { path: 'upload',   component: AddMovieComponent},
+     { path: 'movies',   component: MovieListComponent},
+     { path: 'featured', component: FeaturedMoviesComponent},
+     { path: '', redirectTo: 'home', pathMatch: 'full'},
+     { path: '**', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
   bootstrap: [AppComponent]
