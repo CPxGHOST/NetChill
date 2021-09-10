@@ -2,9 +2,11 @@
 using NetChill.Backend.Domain;
 using System;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace NetChill.Backend.Presentation.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/movies")]
     public class MoviesController : ApiController
     {
@@ -19,14 +21,14 @@ namespace NetChill.Backend.Presentation.Controllers
         [Route()]
         public IHttpActionResult GetAllMovies() {
             var movies = _movieBusinessLogic.GetAllMovies();
-            return Ok(new { Movie = movies});
+            return Ok(movies);
         }
 
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult GetMovie(Guid id) {
             Movie movie = (Movie)_movieBusinessLogic.GetMovieByMovieId(id);
-            return Ok(new {SingleMovie = movie});
+            return Ok(movie);
         }
 
         [HttpPost]

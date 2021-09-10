@@ -1,0 +1,31 @@
+<div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="true" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/movies">Featured</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/movies">New Releases</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/movies">Upcoming</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/movies">My List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href = "/upload" *ngIf="isAdmin">Upload Content</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" *ngIf="isAdmin">Revoke Subscription</a>
+        </li>
+        <li>
+            <form class="example" style="margin-left:250px;max-width:300px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </li>
+    </ul>
+</div>

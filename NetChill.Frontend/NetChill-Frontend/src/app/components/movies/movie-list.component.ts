@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { userDataService } from 'src/app/data-service/userData-service.component';
-import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'app-movie-list',
@@ -23,7 +22,4 @@ export class MovieListComponent implements OnInit {
       this.router.navigate(['/login']);
     } 
   }
-
-  
-
 }
