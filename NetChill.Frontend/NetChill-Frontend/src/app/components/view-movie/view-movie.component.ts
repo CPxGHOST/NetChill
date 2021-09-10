@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { userDataService } from 'src/app/data-service/userData-service.component';
 
 @Component({
   selector: 'app-view-movie',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewMovieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userDataService: userDataService , private router: Router) { }
 
   ngOnInit(): void {
+    if(this.userDataService.loggedInUser == null){
+      this.router.navigate(['/login']);
+    }
   }
 
 }

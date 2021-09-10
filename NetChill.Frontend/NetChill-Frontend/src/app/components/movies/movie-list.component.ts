@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { userDataService } from 'src/app/data-service/userData-service.component';
 import { IUser } from 'src/app/models/IUser';
 
@@ -11,14 +12,16 @@ export class MovieListComponent implements OnInit {
 
   public isAdmin: boolean = false;
 
-  constructor(private userDataService: userDataService) {
+  constructor(private userDataService: userDataService , private router: Router) {
       if(userDataService.loggedInUser.Role == 1){
         this.isAdmin = true;
       }
    }
 
   ngOnInit(): void {
-   
+    if(this.userDataService.loggedInUser == null){
+      this.router.navigate(['/login']);
+    } 
   }
 
   

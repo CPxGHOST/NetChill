@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
     if (signInForm.valid && this.checkStatus) {
       this.userService.LoginUser(signInForm.value).subscribe(
         (res: IUser) => {
-          alert("Logged In");
-          this.userDataService.loggedInUser = {
+           alert("Logged In");
+           this.userDataService.loggedInUser = {
             Email: res.Email,
             Password: res.Password,
             Role: res.Role,
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/movies']);
         },
         (err) => {
-          console.log(err);
+          alert("Wrong email password");
         }
       )
     }

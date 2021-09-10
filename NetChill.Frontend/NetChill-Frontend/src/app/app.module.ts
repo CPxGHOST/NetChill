@@ -42,7 +42,7 @@ import { HomeComponent } from './components/home/home.component';
     RouterModule.forRoot([
       { path: 'featured', component: FeaturedMoviesComponent},
       { path: 'signup', component: SignUpPageComponent} , 
-      {path: 'login' , component: LoginComponent},
+      { path: 'login' , component: LoginComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: 'view', component: ViewMovieComponent},
       { path: 'upload', component: UploadContentComponent},
