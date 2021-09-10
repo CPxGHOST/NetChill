@@ -100,8 +100,8 @@ namespace NetChill.Backend.DataAccess.Services
             try
             {
                 var query = from movie in this._context.Movies
-                        where movie.AvailabilityStarts > DateTime.Now
-                        select movie;
+                           where movie.AvailabilityStarts > DateTime.Now
+                           select movie;
                 return query;
             }
             catch (Exception exception)

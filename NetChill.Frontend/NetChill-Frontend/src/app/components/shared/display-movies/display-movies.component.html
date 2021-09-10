@@ -1,15 +1,9 @@
-<div class="row" *ngIf='movies.length'>
+<div class="row movies-wrapper" *ngIf='movies.length'>
   <section class="movies" *ngFor='let movie of movies'>
-    <div class="row mt-5">
-      <div class="col-sm-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{movie.Name}}</h5>
-            <p class="card-text">{{movie.Category}}</p>
-            <a href="#" class="btn btn-primary"  [routerLink]="['/movies', movie.Id]">Watch Now</a>
-          </div>
-        </div>
+      <div>
+        <img src="../../../../assets/batman.jpg" alt="#" style="height: 15rem; width: 12rem;">
+        <h5>{{movie.Name}}</h5>
+        <a class="btn btn-primary" [routerLink]="['/movies', movie.Id]">Watch Now</a>
       </div>
-    </div>
-  </section>
+   </section>
 </div>
