@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { userDataService } from 'src/app/data-service/userData-service.component';
 
 @Component({
@@ -7,9 +8,13 @@ import { userDataService } from 'src/app/data-service/userData-service.component
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(){};
+
+  constructor(private userDataService: userDataService , private router: Router) { }
 
   ngOnInit(): void {
+    if(this.userDataService.loggedInUser == null){
+      this.router.navigate(['/login']);
+    }
   }
 
 }

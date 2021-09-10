@@ -46,7 +46,7 @@ import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-
     RouterModule.forRoot([
       { path: 'featured', component: FeaturedMoviesComponent},
       { path: 'signup', component: SignUpPageComponent} , 
-      {path: 'login' , component: LoginComponent},
+      { path: 'login' , component: LoginComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: 'movies/:id', component: ViewMovieComponent},
       { path: 'upload', component: UploadContentComponent},

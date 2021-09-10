@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from 'src/app/data-service/movie-service.component';
 import { IMovie } from 'src/app/models/IMovie';
+import { Router } from '@angular/router';
+import { userDataService } from 'src/app/data-service/userData-service.component';
 
 @Component({
   selector: 'app-view-movie',
@@ -14,10 +16,14 @@ export class ViewMovieComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
       private router: Router,
-      private movieService: MovieService) {
+      private movieService: MovieService,
+      private userDataService: userDataService) {
     }
     
     ngOnInit(): void {
+      if(this.userDataService.loggedInUser == null){
+          this.router.navigate(['/login']);
+      }
       const id = this.route.snapshot.paramMap.get('id');
       console.log(id);
       if (id) {
