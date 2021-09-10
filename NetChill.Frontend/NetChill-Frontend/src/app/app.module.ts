@@ -16,6 +16,8 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
 import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { HomeComponent } from './components/home/home.component';
+import { DisplayMoviesComponent } from './components/shared/display-movies/display-movies.component';
+import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-navbar.component';
 
 
 
@@ -33,7 +35,9 @@ import { HomeComponent } from './components/home/home.component';
     AddMovieComponent,
     FeaturedMoviesComponent,
     ViewMovieComponent,
-    HomeComponent
+    HomeComponent,
+    DisplayMoviesComponent,
+    MoviesNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,10 +48,11 @@ import { HomeComponent } from './components/home/home.component';
       { path: 'signup', component: SignUpPageComponent} , 
       { path: 'login' , component: LoginComponent},
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'view', component: ViewMovieComponent},
+      { path: 'movies/:id', component: ViewMovieComponent},
       { path: 'upload', component: UploadContentComponent},
       { path: 'movies', component: MovieListComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'display', component: DisplayMoviesComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
