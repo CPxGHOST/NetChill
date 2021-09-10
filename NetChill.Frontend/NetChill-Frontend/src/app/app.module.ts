@@ -13,7 +13,6 @@ import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { UploadContentComponent } from './components/upload-content/upload-content.component';
-import { AllMoviesComponent } from './components/all-movies/all-movies.component';
 import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { HomeComponent } from './components/home/home.component';
@@ -32,8 +31,7 @@ import { HomeComponent } from './components/home/home.component';
     MovieCardComponent,
     UploadContentComponent,
     AddMovieComponent,
-    AllMoviesComponent,
-    FeaturedMoviesComponent
+    FeaturedMoviesComponent,
     ViewMovieComponent,
     HomeComponent
   ],

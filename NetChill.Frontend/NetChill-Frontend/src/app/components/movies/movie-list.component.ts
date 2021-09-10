@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { userDataService } from 'src/app/data-service/userData-service.component';
+import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'app-movie-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieListComponent implements OnInit {
 
-  constructor() { }
+  public isAdmin: boolean = false;
+
+  constructor(private userDataService: userDataService) {
+      if(userDataService.loggedInUser.Role == 1){
+        this.isAdmin = true;
+      }
+   }
 
   ngOnInit(): void {
+   
   }
+
+  
 
 }

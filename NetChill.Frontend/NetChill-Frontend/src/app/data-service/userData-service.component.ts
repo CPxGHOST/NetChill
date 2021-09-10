@@ -6,5 +6,5 @@ import { IUser } from "../models/IUser";
 })
 
 export class userDataService{
-    loggedInUser!: IUser;
+   public loggedInUser!: IUser;
 }
