@@ -8,7 +8,8 @@ import { IMovie } from "../models/IMovie";
 
 export class MovieService{
     private movieUrl = "https://localhost:44322/api/movies";
-   
+    private upcomingMovieUrl = "https://localhost:44322/api/upcoming";
+
     constructor(private http : HttpClient) {}
 
     AddMovie(movie: IMovie){
@@ -17,6 +18,10 @@ export class MovieService{
 
     GetAllMovies(){
       return this.http.get<IMovie[]>(this.movieUrl);
+    }
+
+    GetUpcomingMovies(){
+      return this.http.get<IMovie[]>(this.upcomingMovieUrl);
     }
 
     GetMovie(id : string){
