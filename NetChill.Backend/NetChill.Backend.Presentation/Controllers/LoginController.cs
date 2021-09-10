@@ -38,7 +38,7 @@ namespace NetChill.Backend.Presentation.Controllers
                     return Ok(user);
                 }
                 else {
-                    return NotFound();
+                    return InternalServerError();
                 }
                 
             }

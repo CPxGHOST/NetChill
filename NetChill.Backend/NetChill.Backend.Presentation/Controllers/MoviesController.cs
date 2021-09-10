@@ -3,7 +3,6 @@ using NetChill.Backend.Domain;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
-
 namespace NetChill.Backend.Presentation.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -22,6 +21,7 @@ namespace NetChill.Backend.Presentation.Controllers
         public IHttpActionResult GetAllMovies() {
             var movies = _movieBusinessLogic.GetAllMovies();
             return Ok(movies);
+
         }
 
         [HttpGet]
@@ -39,7 +39,7 @@ namespace NetChill.Backend.Presentation.Controllers
                 var res = _movieBusinessLogic.AddMovie(movie);
                 if (res)
                 {
-                    return Ok();
+                    return Ok(movie.Name);
                 }
                 else {
                     return InternalServerError();
