@@ -21,5 +21,6 @@ export class MovieListComponent implements OnInit {
     if(this.userDataService.loggedInUser == null){
       this.router.navigate(['/login']);
     } 
+    document.getElementById('home')?.classList.add('active');
   }
 }

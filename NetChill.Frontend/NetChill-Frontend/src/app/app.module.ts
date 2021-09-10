@@ -18,6 +18,9 @@ import { ViewMovieComponent } from './components/view-movie/view-movie.component
 import { HomeComponent } from './components/home/home.component';
 import { DisplayMoviesComponent } from './components/shared/display-movies/display-movies.component';
 import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-navbar.component';
+import { NewReleasesComponent } from './components/new-releases/new-releases.component';
+import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-movies.component';
+import { MyListComponent } from './components/my-list/my-list.component';
 
 
 
@@ -37,7 +40,10 @@ import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-
     ViewMovieComponent,
     HomeComponent,
     DisplayMoviesComponent,
-    MoviesNavbarComponent
+    MoviesNavbarComponent,
+    NewReleasesComponent,
+    UpcomingMoviesComponent,
+    MyListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,11 +56,14 @@ import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-
       { path: 'welcome', component: WelcomeComponent },
       { path: 'movies/:id', component: ViewMovieComponent},
       { path: 'upload', component: UploadContentComponent},
-      { path: 'movies', component: MovieListComponent },
-      { path: 'home', component: HomeComponent },
+      { path: 'movies', component: MovieListComponent},
+      { path: 'home', component: HomeComponent},
       { path: 'display', component: DisplayMoviesComponent},
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+      { path: 'newreleases' , component: NewReleasesComponent},
+      { path: 'upcoming' , component: UpcomingMoviesComponent},
+      { path: 'mylist/:userid', component: MyListComponent},
+      { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ])
   ],
   bootstrap: [AppComponent]

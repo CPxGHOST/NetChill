@@ -1,25 +1,25 @@
 <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="true" href="/home">Home</a>
+          <a class="nav-link" aria-current="true" [routerLink] = "['/movies']"  id="home">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/movies">Featured</a>
+            <a class="nav-link" [routerLink] = "['/featured']" id="featured">Featured</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/movies">New Releases</a>
+            <a class="nav-link" [routerLink] = "['/newreleases']" id="newReleases">New Releases</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/movies">Upcoming</a>
+            <a class="nav-link" [routerLink] = "['/upcoming']" id="upcoming">Upcoming</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/movies">My List</a>
+            <a class="nav-link" [routerLink] = "['/mylist' , userid]" id="myList">My List</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href = "/upload" *ngIf="isAdmin">Upload Content</a>
+            <a class="nav-link" href = "#" *ngIf="isAdmin" id="uploadContent">Upload Content</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" *ngIf="isAdmin">Revoke Subscription</a>
+            <a class="nav-link" href="#"  *ngIf="isAdmin" id="revokeSubscription">Revoke Subscription</a>
         </li>
         <li>
             <form class="example" style="margin-left:250px;max-width:300px">
@@ -28,4 +28,5 @@
             </form>
         </li>
     </ul>
+    <router-outlet></router-outlet>
 </div>
