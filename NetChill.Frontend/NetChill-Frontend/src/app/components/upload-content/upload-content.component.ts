@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MovieService } from 'src/app/data-service/movie-service.component';
+import { userDataService } from 'src/app/data-service/userData-service.component';
 import { IMovie } from 'src/app/models/IMovie';
 
 @Component({
@@ -13,11 +15,13 @@ export class UploadContentComponent implements OnInit {
   imageSrc!: any;  
   newMovie!: IMovie;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService , private userDataService: userDataService , private router: Router) { }
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+    if(this.userDataService.loggedInUser == null){
+      this.router.navigate(['/login']);
+    }
+ }
   preview(files: any){
     const reader = new FileReader();
     let imagepath = files;
