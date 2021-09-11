@@ -1,34 +1,9 @@
 <app-after-login-navbar></app-after-login-navbar>
 <div class="card mt-4">
-    <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="true" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/movies">Featured</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/movies">New Releases</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/movies">Upcoming</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/movies">My List</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/upload">Upload Content</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/movies">Revoke Subscription</a>
-            </li>
-        </ul>
-    </div>
+    <app-movies-navbar></app-movies-navbar>
     <div class="card-body">
         <div class="row" *ngIf='movie'>
             <div class="col">
-                <!--<img src="../../../assets/avatar.jfif" class="card-img-top" alt="..." id="in-view">-->
                 <div class="card">
                     <div class="card-header" style="font-weight: bold;">
                         {{movie.Name}}

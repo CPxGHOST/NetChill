@@ -23,9 +23,9 @@ export class DisplayMoviesComponent implements OnInit {
     if(this.getValue == 0){
       this.GetAllMovies();
     }else if(this.getValue == 1){
-      this.GetAllMovies();
+      this.GetFeaturedMovies();
     }else if(this.getValue == 2){
-      this.GetAllMovies();
+      this.GetNewReleases();
     }else if(this.getValue == 3){
       this.GetUpcomingMovies();
     }else if(this.getValue == 4){
@@ -52,6 +52,24 @@ export class DisplayMoviesComponent implements OnInit {
       },
       error: err => this.errorMessage = err
   });
+  }
+  
+  GetFeaturedMovies(){
+    this.sub = this.movieService.GetFeaturedMovies().subscribe({
+      next: movies => {
+        this.movies = movies;
+      },
+      error: err => this.errorMessage = err
+    });
+  }
+
+  GetNewReleases(){
+    this.sub = this.movieService.GetNewReleases().subscribe({
+      next: movies => {
+        this.movies = movies;
+      },
+      error: err => this.errorMessage = err
+    });
   }
 
   ngOnDestroy(): void {

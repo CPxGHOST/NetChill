@@ -9,6 +9,8 @@ import { IMovie } from "../models/IMovie";
 export class MovieService{
     private movieUrl = "https://localhost:44322/api/movies";
     private upcomingMovieUrl = "https://localhost:44322/api/upcoming";
+    private featuredMovieUrl = "https://localhost:44322/api/featured";
+    private newMovieUrl = "https://localhost:44322/api/new";
 
     constructor(private http : HttpClient) {}
 
@@ -22,6 +24,14 @@ export class MovieService{
 
     GetUpcomingMovies(){
       return this.http.get<IMovie[]>(this.upcomingMovieUrl);
+    }
+
+    GetFeaturedMovies(){
+      return this.http.get<IMovie[]>(this.featuredMovieUrl);
+    }
+
+    GetNewReleases(){
+      return this.http.get<IMovie[]>(this.newMovieUrl);
     }
 
     GetMovie(id : string){
