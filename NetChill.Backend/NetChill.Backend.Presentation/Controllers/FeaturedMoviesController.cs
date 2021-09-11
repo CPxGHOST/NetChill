@@ -5,36 +5,39 @@ using System.Web.Http.Cors;
 
 namespace NetChill.Backend.Presentation.Controllers
 {
-    [RoutePrefix("api/upcoming")]
+    [RoutePrefix("api/featured")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class UpcomingMoviesController : ApiController
+    public class FeaturedMoviesController : ApiController
     {
         private readonly MovieBusinessLogic _movieBusinessLogic;
-        public UpcomingMoviesController()
+        public FeaturedMoviesController()
         {
             this._movieBusinessLogic = new MovieBusinessLogic();
         }
 
         [HttpGet]
         [Route()]
-        public IHttpActionResult GetUpcomingMovies() {
+        public IHttpActionResult GetFeaturedMovies()
+        {
             try
             {
-                var upcomingMovies = this._movieBusinessLogic.GetUpcomingMovies();
-                if (upcomingMovies != null)
+                var featuredMovies = this._movieBusinessLogic.GetFeaturedMovies();
+                if (featuredMovies != null)
                 {
-                    return Ok(upcomingMovies);
+                    return Ok(featuredMovies);
                 }
-                else {
+                else
+                {
                     return NotFound();
                 }
 
             }
-            catch (Exception exception) {
+            catch (Exception exception)
+            {
                 Console.WriteLine(exception.Message);
                 return InternalServerError();
             }
-            
+
         }
     }
 }
