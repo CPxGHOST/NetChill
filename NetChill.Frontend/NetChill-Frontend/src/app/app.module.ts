@@ -10,7 +10,6 @@ import { AfterLoginNavbarComponent } from './components/shared/after-login-navba
 import { BeforeLoginNavbarComponent } from './components/shared/before-login-navbar/before-login-navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MovieListComponent } from './components/movies/movie-list.component';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
@@ -20,6 +19,7 @@ import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-movies.component';
 import { MyListComponent } from './components/my-list/my-list.component';
+import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welcome-movies.component';
 
 
 
@@ -32,7 +32,6 @@ import { MyListComponent } from './components/my-list/my-list.component';
     BeforeLoginNavbarComponent,
     MovieListComponent,
     WelcomeComponent,
-    MovieCardComponent,
     AddMovieComponent,
     FeaturedMoviesComponent,
     ViewMovieComponent,
@@ -41,7 +40,8 @@ import { MyListComponent } from './components/my-list/my-list.component';
     MoviesNavbarComponent,
     NewReleasesComponent,
     UpcomingMoviesComponent,
-    MyListComponent
+    MyListComponent,
+    WelcomeMoviesComponent
   ],
   imports: [
     BrowserModule,

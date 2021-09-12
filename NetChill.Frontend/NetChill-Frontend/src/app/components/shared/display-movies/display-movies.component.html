@@ -1,5 +1,9 @@
-<div class="row movies-wrapper" *ngIf='movies.length'>
-  <section class="movies" *ngFor='let movie of movies'>
+<form class="example" style="margin:auto;max-width:300px">
+  <input type="text" placeholder="Search.." name="search2" [(ngModel)]='listFilter'/>
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<div class="row movies-wrapper mt-5" *ngIf='movies.length'>
+  <section class="movies" *ngFor='let movie of filteredMovies'>
       <div>
         <img src="../../../../assets/batman.jpg" alt="#" style="height: 15rem; width: 12rem;">
         <h5>{{movie.Name}}</h5>
