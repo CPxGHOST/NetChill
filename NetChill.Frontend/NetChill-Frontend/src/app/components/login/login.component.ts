@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/movies']);
         },
         (err) => {
-          alert("Wrong email password");
+          alert("Wrong email or password");
         }
       )
     }

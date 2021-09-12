@@ -31,7 +31,6 @@ export class ViewMovieComponent implements OnInit {
           this.router.navigate(['/login']);
       }
       const id = this.route.snapshot.paramMap.get('id');
-      alert(id);
       if (id) {
         this.GetMovie(id);
       }
@@ -56,7 +55,7 @@ export class ViewMovieComponent implements OnInit {
     AddMovieToList(){
       this.movieListService.AddMovieToList(this.movieListModel).subscribe(
         (res) => {
-          alert("Movie Saved!!");
+          alert("Movie added to list!");
           this.router.navigate([`/mylist/${this.movieListModel.UserId}`]);
         },
         (err) => {
