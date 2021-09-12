@@ -3,3 +3,12 @@
     justify-content: space-around;
     margin-bottom: 1rem;
 }
+
+table, th, td {
+    border:1px solid black;
+    width: 900px;
+}
+
+th {
+    font-weight: bold;
+}
