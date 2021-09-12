@@ -19,7 +19,7 @@ namespace NetChill.Backend.Presentation.Controllers
         private readonly UserBusinessLogic _userBusinessLogic;
 
         private readonly MovieBusinessLogic _movieBusinessLogic;
-        
+
         public MyListController()
         {
             this._movieListBusinessLogic = new MovieListBusinessLogic();
@@ -33,23 +33,44 @@ namespace NetChill.Backend.Presentation.Controllers
         {
             try
             {
-                User user = this._userBusinessLogic.GetUser(addToMyListModel.UserId);
-                Movie movie = this._movieBusinessLogic.GetMovieByMovieId(addToMyListModel.MovieId);
-                bool result = this._movieListBusinessLogic.AddMovieToMovieList(movie, user);
+                
+                bool result = this._movieListBusinessLogic.AddMovieToMovieList(addToMyListModel.MovieId, addToMyListModel.UserId);
                 if (result)
                 {
                     return Ok();
                 }
                 else {
                     return NotFound();
-                }    
+                }
 
             }
-            catch(Exception exception) {
+            catch (Exception exception) {
                 Console.WriteLine(exception.Message);
                 return InternalServerError();
             }
-        
+
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public IHttpActionResult GetMyList(Guid id)
+        {
+            try
+            {
+                var movies = this._movieListBusinessLogic.GetMyMovies(id);
+                if (movies != null)
+                {
+                    
+                    return Ok(movies);
+                }
+                else {
+                    return NotFound();
+                }
+            }
+            catch (Exception exception) {
+                Console.WriteLine(exception.Message);
+                return InternalServerError();
+            }
         }
     
     }

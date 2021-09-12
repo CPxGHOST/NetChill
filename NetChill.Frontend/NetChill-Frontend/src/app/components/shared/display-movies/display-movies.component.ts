@@ -2,7 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/data-service/movie-service.component';
+import { userDataService } from 'src/app/data-service/userData-service.component';
 import { IMovie } from 'src/app/models/IMovie';
+import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'app-display-movies',
@@ -12,12 +14,13 @@ import { IMovie } from 'src/app/models/IMovie';
 export class DisplayMoviesComponent implements OnInit {
   movies : IMovie[] = [];
   errorMessage = '';
+  
   sub!: Subscription;
   // Get Value represents which function to call Home==> 0 , Featured ==> 1 , New Releases => 2 , Upcoming => 3 , My List => 4
   @Input()
   getValue: number = -1;
 
-  constructor(private movieService: MovieService , private router : Router){}
+  constructor(private movieService: MovieService , private router : Router , private user: userDataService){}
 
   ngOnInit(): void {
     if(this.getValue == 0){
@@ -29,7 +32,7 @@ export class DisplayMoviesComponent implements OnInit {
     }else if(this.getValue == 3){
       this.GetUpcomingMovies();
     }else if(this.getValue == 4){
-      this.GetAllMovies();
+      this.GetMyMovies(this.user.loggedInUser.Id);
     }else{
       alert("Error!! Returning to home!");
       this.router.navigate(['/movies']);
@@ -67,6 +70,16 @@ export class DisplayMoviesComponent implements OnInit {
     this.sub = this.movieService.GetNewReleases().subscribe({
       next: movies => {
         this.movies = movies;
+      },
+      error: err => this.errorMessage = err
+    });
+  }
+
+  GetMyMovies(userId: string){
+    this.sub = this.movieService.GetMyMovies(userId).subscribe({
+      next: movies => {
+        this.movies = movies;
+        console.log(movies);
       },
       error: err => this.errorMessage = err
     });

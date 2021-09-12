@@ -1,5 +1,7 @@
 ﻿using NetChill.Backend.Domain;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NetChill.Backend.DataAccess.Services
 {
@@ -12,17 +14,14 @@ namespace NetChill.Backend.DataAccess.Services
         }
         
         /// <inheritdoc cref="IMovieListDataAccess.AddMovieToMovieList(Movie, User)"/>
-        public bool AddMovieToMovieList(Movie movie, User user)
+        public bool AddMovieToMovieList(Guid movieId, Guid userId)
         {
             try
             {
                 this._context.MovieLists.Add(new MovieList
                 {
-                    Movie = movie,
-                    User = user,
-                    MovieId = movie.Id,
-                    UserId = user.Id
-
+                    MovieId = movieId,
+                    UserId = userId
                 });
                 this._context.SaveChanges();
                 return true;
@@ -32,6 +31,17 @@ namespace NetChill.Backend.DataAccess.Services
                 Console.WriteLine(exception);
                 return false;
             }
+        }
+
+        /// <inheritdoc cref="IMovieListDataAccess.GetMyMovies(Guid)"/>
+        public IEnumerable<MovieList> GetMyMovies(Guid userId)
+        {
+            var moviesLists = from movieList in this._context.MovieLists
+                              where movieList.UserId.Equals(userId)
+                              select movieList;
+
+            return moviesLists;
+
         }
     }
 }
