@@ -16,7 +16,6 @@ namespace NetChill.Backend.DataAccess.Services
             
         }
 
-
         /// <inheritdoc cref="IUserDataAccess.AddUser(User)"/>
         public bool AddUser(User user)
         {
@@ -96,6 +95,21 @@ namespace NetChill.Backend.DataAccess.Services
                 Console.WriteLine(exception.Message);
                 return null;
             }
+        }
+
+        /// <inheritdoc cref="IUserDataAccess.DeleteUser(Guid)"/>
+        public bool DeleteUser(Guid userId)
+        {
+           User user = GetUser(userId);
+            var result = false;
+            
+            if (user != null) {
+                this._context.Users.Remove(user);
+                this._context.SaveChanges();
+                result = true;
+            }
+
+            return result;
         }
     }
 }

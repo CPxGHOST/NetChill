@@ -33,9 +33,8 @@ namespace NetChill.Backend.BusinessLogic
             return _userDataAccess.GetUser(email);
         }
 
-        public void UpdateUser(User user)
-        {
-            _userDataAccess.UpdateUser(user);
+        public bool DeleteUser(Guid userId) {
+            return _userDataAccess.DeleteUser(userId);
         }
 
         public IEnumerable<User> GetAllUsers()

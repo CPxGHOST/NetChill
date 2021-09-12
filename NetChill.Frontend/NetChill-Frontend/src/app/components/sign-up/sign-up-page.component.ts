@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/data-service/user-service.component';
+import { userDataService } from 'src/app/data-service/userData-service.component';
 import { IUser } from 'src/app/models/IUser';
 
 @Component({
@@ -11,7 +13,7 @@ import { IUser } from 'src/app/models/IUser';
 export class SignUpPageComponent implements OnInit {
   title: string = 'Sign-up here!';
   newUser!: IUser;
-  constructor(private userDataService: UserService) { }
+  constructor(private userService: UserService , private userDataService: userDataService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,10 +28,18 @@ export class SignUpPageComponent implements OnInit {
         Role: 0
       };
       console.log(this.newUser);
-      this.userDataService.AddUser(this.newUser).subscribe(
+      this.userService.AddUser(this.newUser).subscribe(
         (res) => {
           alert("Signed up!");
-        },
+          this.userDataService.loggedInUser = {
+            Id: '',
+            Email: signUpForm.value.Email,
+            FullName: signUpForm.value.FullName,
+            Password: signUpForm.value.Password,
+            Role: 0
+          };
+          this.router.navigate(['/movies']);
+          },
         err => {
           console.log(err);
         }

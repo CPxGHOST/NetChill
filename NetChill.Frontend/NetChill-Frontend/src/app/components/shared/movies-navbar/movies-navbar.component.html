@@ -16,10 +16,16 @@
             <a class="nav-link" [routerLink] = "['/mylist' , userid]" id="myList">My List</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" [routerLink] = "['/upload']" *ngIf="isAdmin" id="uploadContent">Upload Content</a>
+            <a class="nav-link" [routerLink] = "['/upload']" id="uploadContent" *ngIf="isAdmin" >Upload Content</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"  *ngIf="isAdmin" id="revokeSubscription">Revoke Subscription</a>
+            <a class="nav-link" [routerLink] = "['/revoke']" *ngIf="isAdmin" id="revokeSubscription">Revoke Subscription</a>
+        </li>
+        <li>
+            <form class="example" style="margin-left:250px;max-width:300px" *ngIf = "!isAdmin">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </li>
     </ul>
     <router-outlet></router-outlet>

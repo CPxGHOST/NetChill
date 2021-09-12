@@ -19,6 +19,7 @@ export class AddMovieComponent implements OnInit {
     if(this.userDataService.loggedInUser == null){
       this.router.navigate(['/login']);
     }
+    document.getElementById('uploadContent')?.classList.add('active');
   }
 
   // AddImagePreview(event: any){
