@@ -16,7 +16,7 @@
             <a class="nav-link" [routerLink] = "['/mylist' , userid]" id="myList">My List</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href = "#" *ngIf="isAdmin" id="uploadContent">Upload Content</a>
+            <a class="nav-link" [routerLink] = "['/upload']" *ngIf="isAdmin" id="uploadContent">Upload Content</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#"  *ngIf="isAdmin" id="revokeSubscription">Revoke Subscription</a>

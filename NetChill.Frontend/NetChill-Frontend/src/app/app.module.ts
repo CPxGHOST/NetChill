@@ -12,7 +12,6 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MovieListComponent } from './components/movies/movie-list.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
-import { UploadContentComponent } from './components/upload-content/upload-content.component';
 import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { HomeComponent } from './components/home/home.component';
@@ -34,7 +33,6 @@ import { MyListComponent } from './components/my-list/my-list.component';
     MovieListComponent,
     WelcomeComponent,
     MovieCardComponent,
-    UploadContentComponent,
     AddMovieComponent,
     FeaturedMoviesComponent,
     ViewMovieComponent,
@@ -55,7 +53,7 @@ import { MyListComponent } from './components/my-list/my-list.component';
       { path: 'login' , component: LoginComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: 'movies/:id', component: ViewMovieComponent},
-      { path: 'upload', component: UploadContentComponent},
+      { path: 'upload', component: AddMovieComponent},
       { path: 'movies', component: MovieListComponent},
       { path: 'home', component: HomeComponent},
       { path: 'display', component: DisplayMoviesComponent},

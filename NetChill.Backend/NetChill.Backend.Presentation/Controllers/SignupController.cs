@@ -31,8 +31,6 @@ namespace NetChill.Backend.Presentation.Controllers
                 }
                 else
                 {
-                    if (ModelState.IsValid)
-                    {
                         User newUser = new User
                         {
                             FullName = user.FullName,
@@ -43,11 +41,7 @@ namespace NetChill.Backend.Presentation.Controllers
 
                         _userBusinessLogic.AddUser(newUser);
                         return Ok();
-                    }
-                    else
-                    {
-                        return BadRequest();
-                    }
+                         
                 }
 
             }
