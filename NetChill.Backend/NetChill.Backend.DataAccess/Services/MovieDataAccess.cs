@@ -50,7 +50,7 @@ namespace NetChill.Backend.DataAccess.Services
         {
             try
             {
-                return (IEnumerable<Movie>)this._context.Movies.Select(movie => movie.IsFeatured == true);
+                return this._context.Movies.Where(movie => movie.IsFeatured == true);
             }
             catch (Exception exception) 
             {
