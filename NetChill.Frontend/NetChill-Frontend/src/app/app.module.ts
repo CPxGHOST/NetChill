@@ -42,7 +42,7 @@ import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welco
     NewReleasesComponent,
     UpcomingMoviesComponent,
     MyListComponent,
-    RevokeSubscriptionComponent
+    RevokeSubscriptionComponent,
     WelcomeMoviesComponent
   ],
   imports: [
