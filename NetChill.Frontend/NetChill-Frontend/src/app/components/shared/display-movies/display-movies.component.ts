@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/data-service/movie-service.component';
 import { userDataService } from 'src/app/data-service/userData-service.component';
 import { IMovie } from 'src/app/models/IMovie';
-import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'app-display-movies',
@@ -14,6 +13,8 @@ import { IUser } from 'src/app/models/IUser';
 export class DisplayMoviesComponent implements OnInit {
   movies : IMovie[] = [];
   errorMessage = '';
+  private _listFilter = '';
+  filteredMovies: IMovie[] = [];
   
   sub!: Subscription;
   // Get Value represents which function to call Home==> 0 , Featured ==> 1 , New Releases => 2 , Upcoming => 3 , My List => 4
@@ -37,6 +38,14 @@ export class DisplayMoviesComponent implements OnInit {
       alert("Error!! Returning to home!");
       this.router.navigate(['/movies']);
     }
+
+    this.sub = this.movieService.GetAllMovies().subscribe({
+      next: movies => {
+        this.movies = movies;
+        this.filteredMovies = this.movies;
+      },
+      error: err => this.errorMessage = err
+    });
   }
 
   GetAllMovies(){
@@ -84,6 +93,36 @@ export class DisplayMoviesComponent implements OnInit {
       error: err => this.errorMessage = err
     });
   }
+  
+  get listFilter(): string {
+    return this._listFilter;
+  }
+
+  set listFilter(value: string) {
+    this._listFilter = value;
+    console.log(this._listFilter);
+    this.filteredMovies = this.performFilter(value);
+  }
+  
+  performFilter(filterBy: string): IMovie[] {
+      filterBy = filterBy.toLocaleLowerCase();
+      var res = this.movies.filter((movie: IMovie) =>
+        movie.Name.toLocaleLowerCase().includes(filterBy));
+      console.log(res);
+      return res;
+  }
+  
+  /*
+  ngOnInit() {
+    this.sub = this.movieService.GetAllMovies().subscribe({
+      next: movies => {
+        this.movies = movies;
+        this.filteredMovies = this.movies;
+      },
+      error: err => this.errorMessage = err
+    });
+  }
+  */
 
   ngOnDestroy(): void {
       this.sub.unsubscribe();

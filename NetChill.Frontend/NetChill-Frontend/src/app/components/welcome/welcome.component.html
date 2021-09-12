@@ -1,25 +1,27 @@
 <app-before-login-navbar></app-before-login-navbar>
-<form class="example" style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search.." name="search2">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
 <div class="row">
     <div class="row">
       <div class="card mt-4" id="card-inside">
         <div class="card-header">Featured</div>
-        <app-movie-card></app-movie-card>
+          <div class="card-body text-center">
+             <app-welcome-movies [getValue] = "0"></app-welcome-movies>
+          </div>
       </div>
     </div>
     <div class="row">
       <div class="card mt-4" id="card-inside">
         <div class="card-header">Upcoming</div>
-        <app-movie-card></app-movie-card>
+          <div class="card-body text-center">
+             <app-welcome-movies [getValue] = "2"></app-welcome-movies>
+          </div>
       </div>
     </div>
     <div class="row">
       <div class="card mt-4" id="card-inside">
         <div class="card-header">New Releases</div>
-        <app-movie-card></app-movie-card>
+          <div class="card-body text-center ">
+             <app-welcome-movies [getValue] = "1"></app-welcome-movies>
+          </div>
       </div>
     </div>
 </div>
