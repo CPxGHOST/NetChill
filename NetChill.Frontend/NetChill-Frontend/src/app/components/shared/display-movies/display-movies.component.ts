@@ -38,20 +38,13 @@ export class DisplayMoviesComponent implements OnInit {
       alert("Error!! Returning to home!");
       this.router.navigate(['/movies']);
     }
-
-    this.sub = this.movieService.GetAllMovies().subscribe({
-      next: movies => {
-        this.movies = movies;
-        this.filteredMovies = this.movies;
-      },
-      error: err => this.errorMessage = err
-    });
   }
 
   GetAllMovies(){
     this.sub = this.movieService.GetAllMovies().subscribe({
       next: movies => {
         this.movies = movies;
+        this.filteredMovies = movies;
       },
       error: err => this.errorMessage = err
   });
@@ -61,6 +54,7 @@ export class DisplayMoviesComponent implements OnInit {
     this.sub = this.movieService.GetUpcomingMovies().subscribe({
       next: movies => {
         this.movies = movies;
+        this.filteredMovies = movies;
       },
       error: err => this.errorMessage = err
   });
@@ -70,6 +64,7 @@ export class DisplayMoviesComponent implements OnInit {
     this.sub = this.movieService.GetFeaturedMovies().subscribe({
       next: movies => {
         this.movies = movies;
+        this.filteredMovies = movies;
       },
       error: err => this.errorMessage = err
     });
@@ -79,6 +74,7 @@ export class DisplayMoviesComponent implements OnInit {
     this.sub = this.movieService.GetNewReleases().subscribe({
       next: movies => {
         this.movies = movies;
+        this.filteredMovies = movies;
       },
       error: err => this.errorMessage = err
     });
@@ -88,7 +84,7 @@ export class DisplayMoviesComponent implements OnInit {
     this.sub = this.movieService.GetMyMovies(userId).subscribe({
       next: movies => {
         this.movies = movies;
-        console.log(movies);
+        this.filteredMovies = movies;
       },
       error: err => this.errorMessage = err
     });
@@ -112,18 +108,6 @@ export class DisplayMoviesComponent implements OnInit {
       return res;
   }
   
-  /*
-  ngOnInit() {
-    this.sub = this.movieService.GetAllMovies().subscribe({
-      next: movies => {
-        this.movies = movies;
-        this.filteredMovies = this.movies;
-      },
-      error: err => this.errorMessage = err
-    });
-  }
-  */
-
   ngOnDestroy(): void {
       this.sub.unsubscribe();
   }
