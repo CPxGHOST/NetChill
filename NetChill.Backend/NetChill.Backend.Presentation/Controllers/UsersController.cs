@@ -37,5 +37,26 @@ namespace NetChill.Backend.Presentation.Controllers
 
             return Ok(result);
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IHttpActionResult DeleteUser(Guid id)
+        {
+            try
+            {
+                bool result = this._userBusinessLogic.DeleteUser(id);
+                if (result)
+                {
+                    return Ok();
+                }
+                else {
+                    return NotFound();
+                }
+            }
+            catch (Exception exception) {
+                return InternalServerError();
+            }
+        }
+    
     }
 }

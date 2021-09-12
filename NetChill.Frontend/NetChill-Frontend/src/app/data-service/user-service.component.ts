@@ -10,6 +10,7 @@ import { IUser } from "../models/IUser";
 export class UserService {
     private loginUrl = "https://localhost:44322/api/login";
     private signUpUrl = "https://localhost:44322/api/signup";
+    private usersUrl = "https://localhost:44322/api/users";
     constructor(private http: HttpClient) { }
 
     AddUser(user: IUser) {
@@ -21,4 +22,13 @@ export class UserService {
         console.log(`In Data Service = ${user}`);
         return this.http.post<IUser>(this.loginUrl, user);
     }
+
+    GetAllUsers(): Observable<IUser[]>{
+        return this.http.get<IUser[]>(this.usersUrl);
+    }
+
+    RemoveUser(id: string) {
+        return this.http.delete(this.usersUrl+`/${id}`);
+    }
+
 }

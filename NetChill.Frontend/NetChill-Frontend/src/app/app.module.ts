@@ -20,6 +20,7 @@ import { MoviesNavbarComponent } from './components/shared/movies-navbar/movies-
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-movies.component';
 import { MyListComponent } from './components/my-list/my-list.component';
+import { RevokeSubscriptionComponent } from './components/revoke-subscription/revoke-subscription.component';
 
 
 
@@ -41,27 +42,29 @@ import { MyListComponent } from './components/my-list/my-list.component';
     MoviesNavbarComponent,
     NewReleasesComponent,
     UpcomingMoviesComponent,
-    MyListComponent
+    MyListComponent,
+    RevokeSubscriptionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'featured', component: FeaturedMoviesComponent},
-      { path: 'signup', component: SignUpPageComponent} , 
-      { path: 'login' , component: LoginComponent},
+      { path: 'featured', component: FeaturedMoviesComponent },
+      { path: 'signup', component: SignUpPageComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'movies/:id', component: ViewMovieComponent},
-      { path: 'upload', component: AddMovieComponent},
-      { path: 'movies', component: MovieListComponent},
-      { path: 'home', component: HomeComponent},
-      { path: 'display', component: DisplayMoviesComponent},
-      { path: 'newreleases' , component: NewReleasesComponent},
-      { path: 'upcoming' , component: UpcomingMoviesComponent},
-      { path: 'mylist/:userid', component: MyListComponent},
-      { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+      { path: 'movies/:id', component: ViewMovieComponent },
+      { path: 'upload', component: AddMovieComponent },
+      { path: 'movies', component: MovieListComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'display', component: DisplayMoviesComponent },
+      { path: 'newreleases', component: NewReleasesComponent },
+      { path: 'upcoming', component: UpcomingMoviesComponent },
+      { path: 'mylist/:userid', component: MyListComponent },
+      { path: 'revoke', component: RevokeSubscriptionComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
   bootstrap: [AppComponent]

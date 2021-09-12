@@ -35,15 +35,20 @@ namespace NetChill.Backend.DataAccess.Services
         User GetUser(string email);
 
         /// <summary>
-        /// 
+        /// Deletes a user having the given user id
         /// </summary>
-        /// <param name="user"></param>
-        void UpdateUser(User user);
+        /// <param name="userId">The id of the user to be deleted</param>
+        /// <returns>true if the user is deleted else false</returns>
+        bool DeleteUser(Guid userId);
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         IEnumerable<User> GetAllUsers();
+    
+    
+    
+    
     }
 }

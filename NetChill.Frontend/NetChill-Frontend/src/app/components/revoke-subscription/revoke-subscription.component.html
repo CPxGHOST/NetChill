@@ -1,0 +1,12 @@
+<app-after-login-navbar></app-after-login-navbar>
+<div class="card text-center mt-4">
+    <app-movies-navbar></app-movies-navbar>
+    
+    <div class="card-body" *ngFor = "let user of AllUsers">
+        <section class="user-container" *ngIf = "!user.Role">
+            <h3>{{user.Email}}</h3>
+            <button class="btn btn-danger" (click) = "RevokeSubscription(user.Id)">Revoke Subscription</button>
+        </section>
+        
+    </div>
+</div>
