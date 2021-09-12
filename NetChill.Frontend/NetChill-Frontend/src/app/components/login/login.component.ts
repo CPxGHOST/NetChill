@@ -12,6 +12,7 @@ import { IUser } from 'src/app/models/IUser';
 })
 export class LoginComponent implements OnInit {
   title: string = 'Login here!';
+  isInvalid: boolean = false;
 
   checkStatus!: boolean;
 
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/movies']);
         },
         (err) => {
+          this.isInvalid = true;
           alert("Wrong email or password");
         }
       )

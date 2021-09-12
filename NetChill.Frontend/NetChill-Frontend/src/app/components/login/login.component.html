@@ -3,6 +3,7 @@
     <div class="col"></div>
     <div class="col">
         <h2 style="margin-top: 30px;">{{title}}</h2>
+        <div class="alert alert-danger" *ngIf = "isInvalid">Either your credentials are wrong or your subscription has been revoked. Please try again.</div>
         <form class="form-class" #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
             <input type="hidden" name="Id" ngModel>
             <div class="mb-3">
