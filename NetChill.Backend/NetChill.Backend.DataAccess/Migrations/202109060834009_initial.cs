@@ -48,9 +48,11 @@
                         Role = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
+
+            Sql("INSERT INTO dbo.Users Values('701cde8a-506a-4cb6-a784-8dae9d340172' , 'Admin' , 'admin@gmail.com' , '12345678', 1)");
+
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.MovieLists", "UserId", "dbo.Users");
