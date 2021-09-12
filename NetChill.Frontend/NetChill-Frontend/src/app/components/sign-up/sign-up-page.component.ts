@@ -13,6 +13,7 @@ import { IUser } from 'src/app/models/IUser';
 export class SignUpPageComponent implements OnInit {
   title: string = 'Sign-up here!';
   newUser!: IUser;
+  isInvalid: boolean = false;
   constructor(private userService: UserService , private userDataService: userDataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -41,6 +42,7 @@ export class SignUpPageComponent implements OnInit {
           this.router.navigate(['/movies']);
           },
         err => {
+          this.isInvalid = true;
           console.log(err);
         }
       )

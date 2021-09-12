@@ -7,6 +7,7 @@
             <small class="form-text text-muted">Please fill this form to create an account.</small>
         </div>
         <br>
+        <div class="alert alert-danger" *ngIf = "isInvalid">An account with the similar email already exists. Please try logging in.</div>
         <form #signUpForm="ngForm" (ngSubmit) = "onSubmit(signUpForm)">
             <div class="form-group">
                 <label for="name">Name :</label>
