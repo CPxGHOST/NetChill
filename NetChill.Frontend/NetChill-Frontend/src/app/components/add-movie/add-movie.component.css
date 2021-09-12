@@ -4,11 +4,13 @@
     margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
-    }
+}
+
 .right-side-form>div{
     margin-bottom: 1rem;
 }
- .img-container{
+
+.img-container{
     margin: auto;
     margin-top: 2rem;
     width: 20rem;

@@ -10,7 +10,6 @@ import { AfterLoginNavbarComponent } from './components/shared/after-login-navba
 import { BeforeLoginNavbarComponent } from './components/shared/before-login-navbar/before-login-navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MovieListComponent } from './components/movies/movie-list.component';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { FeaturedMoviesComponent } from './components/featured-movies/featured-movies.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
@@ -21,6 +20,7 @@ import { NewReleasesComponent } from './components/new-releases/new-releases.com
 import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-movies.component';
 import { MyListComponent } from './components/my-list/my-list.component';
 import { RevokeSubscriptionComponent } from './components/revoke-subscription/revoke-subscription.component';
+import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welcome-movies.component';
 
 
 
@@ -33,7 +33,6 @@ import { RevokeSubscriptionComponent } from './components/revoke-subscription/re
     BeforeLoginNavbarComponent,
     MovieListComponent,
     WelcomeComponent,
-    MovieCardComponent,
     AddMovieComponent,
     FeaturedMoviesComponent,
     ViewMovieComponent,
@@ -44,6 +43,7 @@ import { RevokeSubscriptionComponent } from './components/revoke-subscription/re
     UpcomingMoviesComponent,
     MyListComponent,
     RevokeSubscriptionComponent
+    WelcomeMoviesComponent
   ],
   imports: [
     BrowserModule,
