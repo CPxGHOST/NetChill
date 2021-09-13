@@ -5,31 +5,9 @@
             <iframe width="560" height="500" [src]='videoUrl'  style="margin-bottom: 1rem;" frameborder="0" allowfullscreen>
             </iframe>
             <div class="col">
-                <div class="card">
-                    <div class="card-header" style="font-weight: bold;">
-                        {{movie.Name}}
-                    </div>
-                    <div class='card-body'>
-                        <div class='row'>
-                            <div class='col-md-8'>
-                                <div class='row'>
-                                    <div class='col-md-4'>Category :</div>
-                                    <div class='col-md-8'>{{movie.Category}}</div>
-                                </div>
-                                <div class='row'>
-                                    <div class='col-md-4'>YOR :</div>
-                                    <div class='col-md-8'>{{movie.YearOfRelease}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <button type="submit" class="btn btn-primary mt-5" (click) = "AddMovieToList()">Add to list</button>
                 <h5 class="mt-5"> {{movie.Name}} <span>[</span>{{movie.YearOfRelease}}<span>]</span></h5>
-                <p>{{movie.Description}}
-                </p>
+                <p>{{movie.Description}}</p>
+                <button type="submit" class="btn btn-primary mt-3" (click) = "AddMovieToList()">Add to list</button>
             </div>
         </div>
         <h4 class="mt-5">Similar movies</h4>
