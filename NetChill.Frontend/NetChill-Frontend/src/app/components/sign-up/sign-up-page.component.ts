@@ -32,14 +32,7 @@ export class SignUpPageComponent implements OnInit {
       this.userService.AddUser(this.newUser).subscribe(
         (res) => {
           alert("Signed up!");
-          this.userDataService.loggedInUser = {
-            Id: '',
-            Email: signUpForm.value.Email,
-            FullName: signUpForm.value.FullName,
-            Password: signUpForm.value.Password,
-            Role: 0
-          };
-          this.router.navigate(['/movies']);
+          this.router.navigate(['/login']);
           },
         err => {
           this.isInvalid = true;

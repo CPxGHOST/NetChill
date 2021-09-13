@@ -29,7 +29,7 @@ namespace NetChill.Backend.BusinessLogic
            List<Movie> myMovies = new List<Movie>();
 
             foreach (MovieList movieList in movieLists) {
-                myMovies.Add(_movieDataAccess.GetMovieByMovieId(movieList.MovieId));        
+                myMovies.Add(_movieDataAccess.GetMovie(movieList.MovieId));        
             }
             return myMovies;
         }
