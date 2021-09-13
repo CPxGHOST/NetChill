@@ -12,6 +12,5 @@ namespace NetChill.Backend.Domain
         public Guid UserId { get; set; }
         public Movie Movie { get; set; }
         public Guid MovieId { get; set; }
-
     }
 }

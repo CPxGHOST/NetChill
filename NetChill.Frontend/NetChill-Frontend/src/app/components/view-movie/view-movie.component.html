@@ -1,8 +1,9 @@
 <app-after-login-navbar></app-after-login-navbar>
 <div class="card mt-4">
     <app-movies-navbar></app-movies-navbar>
-    <div class="card-body">
-        <div class="row" *ngIf='movie'>
+         <div class="row" *ngIf='movie'>
+            <iframe width="560" height="500" [src]='videoUrl'  style="margin-bottom: 1rem;" frameborder="0" allowfullscreen>
+            </iframe>
             <div class="col">
                 <div class="card">
                     <div class="card-header" style="font-weight: bold;">
@@ -55,4 +56,3 @@
             </div>
         </div>
     </div>
-</div>
