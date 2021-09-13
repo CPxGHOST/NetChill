@@ -45,7 +45,8 @@ namespace NetChill.Backend.Presentation.Controllers
                         };
 
                         _userBusinessLogic.AddUser(newUser);
-                        return Ok();
+                        var user2 = _userBusinessLogic.GetUser(newUser.Email);
+                        return Ok(user2);
                          
                 }
 
