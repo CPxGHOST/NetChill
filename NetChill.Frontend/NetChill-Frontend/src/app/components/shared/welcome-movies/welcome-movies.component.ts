@@ -38,6 +38,7 @@ export class WelcomeMoviesComponent implements OnInit {
     this.sub = this.movieService.GetUpcomingMovies().subscribe({
       next: movies => {
         this.movies = movies;
+        
       },
       error: err => this.errorMessage = err
   });
