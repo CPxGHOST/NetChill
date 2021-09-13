@@ -1,8 +1,12 @@
 .movies-wrapper{
     margin: auto;
     display: grid;
+  
     grid-template-columns: repeat(3 , 1fr);
     grid-gap: 2.5rem;
+}
+.form-container{
+ 
 }
 .movies{
     margin: 0;

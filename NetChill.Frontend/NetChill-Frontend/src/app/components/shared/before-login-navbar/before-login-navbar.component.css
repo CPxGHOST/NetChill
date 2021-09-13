@@ -1,6 +1,7 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: rgb(7, 6, 6);
+    opacity: 0.8;
     overflow: hidden;
     position: relative;
     top: -10px;
@@ -8,6 +9,7 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
+    opacity: 1;
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -18,7 +20,7 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    color: cyan;
+    color: rgb(214, 8, 8);
 }
 
 #login,
@@ -32,5 +34,5 @@
 
 #login:hover,
 #signup:hover{
-    color: aqua;
+    color: rgb(214, 8, 8);
 }

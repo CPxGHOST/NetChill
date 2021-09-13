@@ -21,7 +21,6 @@ import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-m
 import { MyListComponent } from './components/my-list/my-list.component';
 import { RevokeSubscriptionComponent } from './components/revoke-subscription/revoke-subscription.component';
 import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welcome-movies.component';
-import { UploadContentComponent } from './components/upload-content/upload-content.component';
 
 
 
@@ -44,8 +43,8 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
     UpcomingMoviesComponent,
     MyListComponent,
     RevokeSubscriptionComponent,
-    WelcomeMoviesComponent,
-    UploadContentComponent
+  WelcomeMoviesComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -66,7 +65,6 @@ import { UploadContentComponent } from './components/upload-content/upload-conte
       { path: 'upcoming', component: UpcomingMoviesComponent },
       { path: 'mylist/:userid', component: MyListComponent },
       { path: 'revoke', component: RevokeSubscriptionComponent },
-      { path: 'demo' , component:UploadContentComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
