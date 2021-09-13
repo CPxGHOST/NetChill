@@ -16,6 +16,10 @@ namespace NetChill.Backend.Presentation.Controllers
             this._movieBusinessLogic = new MovieBusinessLogic();
         }
 
+        /// <summary>
+        /// Handles the request to fetch all movies
+        /// </summary>
+        /// <returns>All movies</returns>
         [HttpGet]
         [Route()]
         public IHttpActionResult GetAllMovies() {
@@ -24,13 +28,23 @@ namespace NetChill.Backend.Presentation.Controllers
 
         }
 
+        /// <summary>
+        /// Handles the request to get movie by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Movie with given id</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult GetMovie(Guid id) {
-            Movie movie = (Movie)_movieBusinessLogic.GetMovieByMovieId(id);
+            Movie movie = (Movie)_movieBusinessLogic.GetMovie(id);
             return Ok(movie);
         }
 
+        /// <summary>
+        /// Handles the request to add movie
+        /// </summary>
+        /// <param name="movie"></param>
+        /// <returns>Movie added</returns>
         [HttpPost]
         [Route()]
         public IHttpActionResult AddMovie(Movie movie) {
@@ -51,6 +65,11 @@ namespace NetChill.Backend.Presentation.Controllers
             }
         }
 
+        /// <summary>
+        /// Handles the request to update movie
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Updated movie</returns>
         [HttpPut]
         [Route("{id}")]
         public IHttpActionResult UpdateMovie(Guid id) {

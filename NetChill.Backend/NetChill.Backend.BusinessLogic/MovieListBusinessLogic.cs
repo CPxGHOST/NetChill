@@ -16,11 +16,13 @@ namespace NetChill.Backend.BusinessLogic
             _movieDataAccess = new MovieDataAccess();
         }
 
+        /// <inheritdoc cref="IMovieListDataAccess.AddMovieToMovieList(Guid, Guid)"/>
         public bool AddMovieToMovieList(Guid movieId, Guid userId)
         {
             return _movieListDataAcces.AddMovieToMovieList(movieId, userId);
         }
 
+        /// <inheritdoc cref="IMovieListDataAccess.GetMyMovies(Guid)"/>
         public List<Movie> GetMyMovies(Guid userId) {
            var movieLists = _movieListDataAcces.GetMyMovies(userId);
 

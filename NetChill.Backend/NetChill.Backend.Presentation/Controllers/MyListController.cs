@@ -27,6 +27,11 @@ namespace NetChill.Backend.Presentation.Controllers
             this._userBusinessLogic = new UserBusinessLogic();
         }
 
+        /// <summary>
+        /// Handles the request to add movie to user's list
+        /// </summary>
+        /// <param name="addToMyListModel"></param>
+        /// <returns></returns>
         [Route()]
         [HttpPost]
         public IHttpActionResult AddToMyList(AddToMyListModel addToMyListModel)
@@ -50,6 +55,12 @@ namespace NetChill.Backend.Presentation.Controllers
             }
 
         }
+
+        /// <summary>
+        /// Use to display list of movies added to 'My List' by user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>List of movies</returns>
 
         [HttpGet]
         [Route("{id}")]

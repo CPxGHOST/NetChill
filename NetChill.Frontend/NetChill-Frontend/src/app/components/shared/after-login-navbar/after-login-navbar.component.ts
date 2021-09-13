@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'app-after-login-navbar',

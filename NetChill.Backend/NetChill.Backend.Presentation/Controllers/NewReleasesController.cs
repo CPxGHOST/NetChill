@@ -16,6 +16,10 @@ namespace NetChill.Backend.Presentation.Controllers
             this._movieBusinessLogic = new MovieBusinessLogic();
         }
 
+        /// <summary>
+        /// Handles the get request to fetch newly released movies
+        /// </summary>
+        /// <returns>All new releases</returns>
         [HttpGet]
         [Route()]
         public IHttpActionResult GetNewReleases()

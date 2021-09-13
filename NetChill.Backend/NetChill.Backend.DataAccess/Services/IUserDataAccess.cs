@@ -21,17 +21,17 @@ namespace NetChill.Backend.DataAccess.Services
         bool AddUser(User user);
 
         /// <summary>
-        /// 
+        /// Get user by Id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>User with given Id</returns>
         User GetUser(Guid id);
 
         /// <summary>
-        /// 
+        /// Get user by email
         /// </summary>
         /// <param name="email"></param>
-        /// <returns></returns>
+        /// <returns>User with given email</returns>
         User GetUser(string email);
 
         /// <summary>
@@ -42,13 +42,9 @@ namespace NetChill.Backend.DataAccess.Services
         bool DeleteUser(Guid userId);
 
         /// <summary>
-        /// 
+        /// Gets all users that are stored in database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of users</returns>
         IEnumerable<User> GetAllUsers();
-    
-    
-    
-    
     }
 }

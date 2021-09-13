@@ -36,7 +36,7 @@ namespace NetChill.Backend.DataAccess.Services
         /// </summary>
         /// <param name="id">Movie id</param>
         /// <returns>Movie having the same id as in the parameter</returns>
-        Movie GetMovieByMovieId(Guid id);
+        Movie GetMovie(Guid id);
 
         /// <summary>
         /// Adds Movies to the database
