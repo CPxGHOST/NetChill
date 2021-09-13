@@ -60,8 +60,8 @@ namespace NetChill.Backend.DataAccess.Services
         }
 
 
-        /// <inheritdoc cref="IMovieDataAccess.GetMovieByMovieId(Guid id)"/>
-        public Movie GetMovieByMovieId(Guid id)
+        /// <inheritdoc cref="IMovieDataAccess.GetMovie(Guid id)"/>
+        public Movie GetMovie(Guid id)
         {
             try
             {

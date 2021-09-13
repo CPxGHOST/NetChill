@@ -20,8 +20,5 @@ namespace NetChill.Backend.DataAccess.Services
         /// <param name="userId">The user id of the user</param>
         /// <returns>Collection of movies</returns>
         IEnumerable<MovieList> GetMyMovies(Guid userId);
-        
-        
-    
     }
 }

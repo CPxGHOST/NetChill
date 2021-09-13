@@ -16,6 +16,10 @@ namespace NetChill.Backend.Presentation.Controllers
             _userBusinessLogic = new UserBusinessLogic();
         }
 
+        /// <summary>
+        /// Handles the request to get all users
+        /// </summary>
+        /// <returns>List of users</returns>
         [HttpGet]
         [Route()]
         public IHttpActionResult GetAllUsers()
@@ -24,6 +28,11 @@ namespace NetChill.Backend.Presentation.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Handles the request to get user by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>User with given Id</returns>
         [HttpGet]
         [Route("{id}")]
         public IHttpActionResult GetUser(Guid id)
@@ -38,6 +47,11 @@ namespace NetChill.Backend.Presentation.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Handles the request to delete a user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteUser(Guid id)
@@ -53,8 +67,8 @@ namespace NetChill.Backend.Presentation.Controllers
                     return NotFound();
                 }
             }
-            catch (Exception exception) {
-                return InternalServerError();
+            catch (Exception ex) {
+                return InternalServerError(ex);
             }
         }
     

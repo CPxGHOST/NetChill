@@ -17,13 +17,18 @@ namespace NetChill.Backend.Presentation.Controllers
             _userBusinessLogic = new UserBusinessLogic();
         }
 
+        /// <summary>
+        /// Handles the request to sign up a new user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>Signed in user</returns>
         [HttpPost]
         [Route()]
         public IHttpActionResult SignUp(User user)
         {
             try
             {
-                var userExists = _userBusinessLogic.GetUserByEmail(user.Email);
+                var userExists = _userBusinessLogic.GetUser(user.Email);
 
                 if (userExists != null)
                 {

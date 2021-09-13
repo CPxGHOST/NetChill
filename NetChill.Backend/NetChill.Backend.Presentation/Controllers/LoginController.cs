@@ -18,6 +18,11 @@ namespace NetChill.Backend.Presentation.Controllers
             _userBusinessLogic = new UserBusinessLogic();
         }
 
+        /// <summary>
+        /// Handles the login request of user 
+        /// </summary>
+        /// <param name="loginUser"></param>
+        /// <returns>Logged in user</returns>
         [HttpPost]
         [Route()]
         public IHttpActionResult Login(LoginUserModel loginUser)
@@ -33,7 +38,7 @@ namespace NetChill.Backend.Presentation.Controllers
                 bool result =  _userBusinessLogic.DoesUserExist(user);
                 if (result)
                 {
-                    user = _userBusinessLogic.GetUserByEmail(loginUser.Email);
+                    user = _userBusinessLogic.GetUser(loginUser.Email);
                     
                     return Ok(user);
                 }
