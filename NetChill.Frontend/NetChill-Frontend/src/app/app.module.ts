@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { UpcomingMoviesComponent } from './components/upcoming-movies/upcoming-m
 import { MyListComponent } from './components/my-list/my-list.component';
 import { RevokeSubscriptionComponent } from './components/revoke-subscription/revoke-subscription.component';
 import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welcome-movies.component';
+import { UploadContentComponent } from './components/upload-content/upload-content.component';
 
 
 
@@ -43,12 +44,14 @@ import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welco
     UpcomingMoviesComponent,
     MyListComponent,
     RevokeSubscriptionComponent,
-    WelcomeMoviesComponent
+    WelcomeMoviesComponent,
+    UploadContentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'featured', component: FeaturedMoviesComponent },
       { path: 'signup', component: SignUpPageComponent },
@@ -63,6 +66,7 @@ import { WelcomeMoviesComponent } from './components/shared/welcome-movies/welco
       { path: 'upcoming', component: UpcomingMoviesComponent },
       { path: 'mylist/:userid', component: MyListComponent },
       { path: 'revoke', component: RevokeSubscriptionComponent },
+      { path: 'demo' , component:UploadContentComponent},
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
